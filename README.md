@@ -62,4 +62,5 @@
 [ROS2](6_ros2.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
 [usage_proposal](7_usage_proposal.md)
-
+## 第８章　試験的な実装
+[exprimental](8_exprimental.md)
