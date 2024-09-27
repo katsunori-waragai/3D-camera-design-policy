@@ -12,3 +12,35 @@
 - アルゴリズム利用の際の結果データのデータ形式
   - ネットワーク間でそのデータを転送する際のインタフェース
 
+## requirement
+- 全ての時刻情報はCPUボード、各種センサボードで同期されていること
+- 各種センサからの取得データには、時刻情報が付随していること。
+- 画像センシングの結果には、必ず元となった画像データの取得時刻の情報を含んでいる
+- データのスナップショットをとる操作と、そのデータを転送する操作とは区別されるべきである
+
+## あればなおうれしい項目
+- 複数センサのデータのスナップショットを同期してとれれば、うれしい。
+- 複数センサのデータの統合処理が楽になる。
+
+## test
+ロボットに使われる画像計測・画像認識についてトレース可能なテストがほしい。
+そのカメラとそのアルゴリズムに対して、どのようなデータでどのようなテストをしているのかが
+トレースできる環境を構築する。
+
+#### testの方針
+- 個々のリポジトリごとにテストを行う。
+- アルゴリズム自体のテストのためには、カメラが不要でテストする。
+- テスト用に使用するデータは、誰でもがダウンロード可能にして、誰でもがテスト可能な状況を目指す。
+- CircleCIなどでは対応していないボード・CPUの場合には、ローカルなデバイス上でテスト自動化を目指す。
+
+###### センサ特化での再現性試験
+- センサとそのSDKによっては、センサデータを独自形式でファイルに保存できるものがある。
+　それを使うと、カメラデバイスを外した状況で、あたかもカメラを接続したような動作ができる。
+　そのことによって、同じセンサデータの時系列を与えたときの出力を、アルゴリズムの種類・パラメータの変更によってどうなるのかを比較できる。
+　例： StereoLabs ZED SDK
+  [recording/playback](https://github.com/stereolabs/zed-sdk/tree/master/recording/playback)
+
+######  ROS2での再現試験
+ros2bag という仕組みがあって、センサデータをほrecordしplayback する機能がある。
+- [Recording and playing back data](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
+- [Recording and playing back data](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
