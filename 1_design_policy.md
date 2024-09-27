@@ -32,6 +32,12 @@
 - アルゴリズム自体のテストのためには、カメラが不要でテストする。
 - テスト用に使用するデータは、誰でもがダウンロード可能にして、誰でもがテスト可能な状況を目指す。
 - CircleCIなどでは対応していないボード・CPUの場合には、ローカルなデバイス上でテスト自動化を目指す。
+###### センサなしでのテスト
+画像計測アルゴリズム・画像認識アルゴリズムの単体テストは、センサなしでも実現できる。
+入力データをファイルにしておいて、それを読んで動作させて、結果を期待値と比較することでテストが可能である。
+画像データは、pngファイルなどの損失のないデータを用いる。
+pythonの場合：npyファイル, npz ファイルを用いることで、numpyで表されるデータを保存できる。
+それらを使うことで、センサなしで、アルゴリズムへの単体テストができる。
 
 ###### センサ特化での再現性試験
 - センサとそのSDKによっては、センサデータを独自形式でファイルに保存できるものがある。
@@ -44,3 +50,35 @@
 ros2bag という仕組みがあって、センサデータをほrecordしplayback する機能がある。
 - [Recording and playing back data](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
 - [Recording and playing back data](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
+
+## implementation
+#### python3の場合
+```commandline
+python3 -m pip install .
+```
+でモジュールをパッケージとしてインストールできるようにする。
+
+モジュール名、パッケージ名は既存のpypi に登録してあるのと名前がぶつからないように付ける。
+
+###### headless への対応
+組み込み分野の画像計測・画像認識処理では、本番の運用の中では、画像表示を持たないことが多い。
+そのため、アルゴリズムの実行の中では、画面表示をもつべきではない。
+Linuxの場合にはX11の表示先を期待してはならない。
+cv2.imshow()を必要としてはならない。
+
+###### 標準出力
+- アルゴリズムのモジュール自体は標準出力にモジュールはメッセージを表示すべきではない。
+- 実装先のシステムが用意しているlogシステムに出力する。
+- pythonの場合にはloggingがある。
+
+## C++(C++11以降)の場合
+なるべく最新のC++の規格を採用したコーディングを心がけましょう。
+- [The OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide)
+- [Open3D style guide](https://www.open3d.org/docs/0.12.0/contribute/styleguide.html)
+- [ROS2 coding style](https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html#id1)
+ ROS2では`Rolling targets C++17.` と言っている。
+ 3Dカメラを利用したアルゴリズムもそれに従うのがよい。
+
+
+CMakeを使ってライブラリの作成、サンプルの実行形式を作れるようにしましょう。
+
