@@ -64,3 +64,5 @@
 [usage_proposal](7_usage_proposal.md)
 ## 第８章　試験的な実装
 [exprimental](8_exprimental.md)
+## 第９章 対象外のこと
+[out_of_scope](9_out_of_scope.md)
