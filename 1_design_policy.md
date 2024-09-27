@@ -66,6 +66,11 @@ python3 -m pip install .
 Linuxの場合にはX11の表示先を期待してはならない。
 cv2.imshow()を必要としてはならない。
 
+###### 標準出力
+- アルゴリズムのモジュール自体は標準出力にモジュールはメッセージを表示すべきではない。
+- 実装先のシステムが用意しているlogシステムに出力する。
+- pythonの場合にはloggingがある。
+
 ## C++(C++11以降)の場合
 なるべく最新のC++の規格を採用したコーディングを心がけましょう。
 - [The OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide)
