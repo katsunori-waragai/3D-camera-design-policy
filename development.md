@@ -42,3 +42,15 @@ Nvidia JetsonやRaspberry Pi　などのようにクラウドサービスでは�
 - [JetsonでGitHub ActionsのSelf-hosted Runnerをサービスとして動かす](https://qiita.com/ynott/items/8ec1dbfe14f3225bbe70)
 
 
+## TensorRTモデルへの変換
+pytorchのモデルはTensorRTへのモデルに変換することで、NVIDIA　GPUでの動作速度を改善することができます。
+
+----
+## other board
+画像認識・機械学習の移植先は、多数あります。
+その開発環境は、それぞれに異なります。
+
+#### onnx 環境
+tensorflowやpytorchのモデルをonnx にモデルを変換することができます。
+onnxは、インテルの各種デバイスで動作させることができます。
+
