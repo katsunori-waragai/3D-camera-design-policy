@@ -44,3 +44,18 @@
 ros2bag という仕組みがあって、センサデータをほrecordしplayback する機能がある。
 - [Recording and playing back data](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
 - [Recording and playing back data](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
+
+## implementation
+#### python3の場合
+```commandline
+python3 -m pip install .
+```
+でモジュールをパッケージとしてインストールできるようにする。
+
+モジュール名、パッケージ名は既存のpypi に登録してあるのと名前がぶつからないように付ける。
+
+## C++(C++11以降)の場合
+なるべく最新のC++の規格を採用したコーディングを心がけましょう。
+- [The OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide)
+- [Open3D style guide](https://www.open3d.org/docs/0.12.0/contribute/styleguide.html)
+
