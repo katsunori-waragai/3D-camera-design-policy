@@ -64,5 +64,10 @@ python3 -m pip install .
 なるべく最新のC++の規格を採用したコーディングを心がけましょう。
 - [The OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide)
 - [Open3D style guide](https://www.open3d.org/docs/0.12.0/contribute/styleguide.html)
+- [ROS2 coding style](https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html#id1)
+ ROS2では`Rolling targets C++17.` と言っている。
+ 3Dカメラを利用したアルゴリズムもそれに従うのがよい。
+
+
 CMakeを使ってライブラリの作成、サンプルの実行形式を作れるようにしましょう。
 
