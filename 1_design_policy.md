@@ -60,6 +60,12 @@ python3 -m pip install .
 
 モジュール名、パッケージ名は既存のpypi に登録してあるのと名前がぶつからないように付ける。
 
+###### headless への対応
+組み込み分野の画像計測・画像認識処理では、本番の運用の中では、画像表示を持たないことが多い。
+そのため、アルゴリズムの実行の中では、画面表示をもつべきではない。
+Linuxの場合にはX11の表示先を期待してはならない。
+cv2.imshow()を必要としてはならない。
+
 ## C++(C++11以降)の場合
 なるべく最新のC++の規格を採用したコーディングを心がけましょう。
 - [The OpenCV Coding Style Guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide)
