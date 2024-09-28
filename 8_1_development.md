@@ -63,5 +63,13 @@ onnxは、インテルの各種デバイスで動作させることができま�
 その開発環境は、それぞれに異なります。
 それぞれのボードごとに調べてください。
 
-
+#### 画像認識の推論用のデバイスというエッジな世界の経験
+- Cuda デバイス
+- Jetson Deep Learning Accelerator (DLA)
+- Google TPU
+- Intel Movidius
+- OpenCV AI Kit
+- HAILO
+- Kakip
+- 画像認識のFPGA実装
 
