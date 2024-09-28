@@ -63,6 +63,8 @@
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
 [usage_proposal](7_usage_proposal.md)
 ## 第８章　試験的な実装
-[exprimental](8_exprimental.md)
+- [exprimental](8_exprimental.md)
+- 開発 [development](8_1_development.md)
+- [open3d](8_2_open3d.md)
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
