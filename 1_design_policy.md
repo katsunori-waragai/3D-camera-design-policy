@@ -25,6 +25,9 @@
   - cv2.imread(filename)
   - skimage.io.imread(filename)
   - imageio.imread(filename)
+  np.ndarray型では、画像の画素値を整数値で扱う場合もあるし、float型を使う場合もある。
+  float型の使われ方としては、[0.0 - 1.0]の間の連続値として用いられている場合もある。
+  skimageの方がfloat型の場合の対応されている範囲が広い。
 - ２：PIL.Image型
   - Image.open(imfile)
 - 3: open3d.geometry.Image型
