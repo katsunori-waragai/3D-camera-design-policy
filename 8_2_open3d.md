@@ -28,3 +28,13 @@ Open3Dは、多くの研究プロジェクトで使用されており、クラ�
 [Open3D-ML](https://github.com/isl-org/Open3D-ML)
 An extension of Open3D to address 3D Machine Learning tasks
 
+
+## CUDAが利用可能な環境では、Open3DもCUDA対応の版を使うのがよい。
+
+[Open3D with CUDA](https://zenn.dev/yutashx/scraps/577ae6230ebb82)
+
+## OpenGL
+Open3DはOpenGLを内部で利用している。
+OpenGLの記述能力は細かい部分まで可能であるが、ライブラリを使いこなすのがむずかしい。
+Open3Dから表示させた方が、表示が楽だろう。
+
