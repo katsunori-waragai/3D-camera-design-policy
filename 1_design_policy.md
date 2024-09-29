@@ -19,8 +19,14 @@
 - defaultでも動作できるようにしておく
 - メソッドの実行の際には、画像を渡せば実行できるようにする。
 
+#### 後処理込みのAPI
+推奨：機械学習を含む場合でも、ユーザーに公開するAPIにおいては、後処理込みのものとすること
+非推奨： 深層学習後のネットワークの出力そのままを返すので、解釈可能にするためにユーザー側が後処理を別に実施する。
+
+
 ## 画像データの選択肢
-- １：np.ndarray型
+
+- １：np.ndarray型 (numpy, opencv)
   - np.ndarray型の場合には、色順序がRGBなのかBGRなのかは明示する。
   - cv2.imread(filename)
   - skimage.io.imread(filename)
@@ -39,6 +45,8 @@ Tensor 型では、データをCPUだけではなく、GPUを指定できる。
 
 - class torchvision.tv_tensors.Image(data: Any, *, dtype: Optional[dtype] = None, device: Optional[Union[device, str, int]] = None, requires_grad: Optional[bool] = None
 https://pytorch.org/vision/main/generated/torchvision.tv_tensors.Image.html
+- 5: tf.Tensor 型 Tensorflow
+ GPU, TPUに対応している。
 
 #### 商用ライブラリの独自データ形式
 - 商用の画像認識ライブラリは、独自のデータ型を用いている場合がある。
@@ -60,6 +68,11 @@ cv_img = image.get_data()
 #### 画像認識・機械学習系にデータを渡す場合の注意
 - チャネル数が、そのAPIで使用するものと一致していること
 - 部分画像を渡したいときには `image[100:200, 300:400, :].copy()` などとして連続な領域として渡す
+
+#### GPU上にその画像データはおけるのか
+TensorFlowのTensor型ではデータは、CPU、GPUのどちらにも置ける。
+しかし、大半の画像データ形式は、CPU上に限られる。
+
 
 ## test
 ロボットに使われる画像計測・画像認識についてトレース可能なテストがほしい。
