@@ -1,4 +1,16 @@
 # open3d
+特定のSDKに依存しない形で、３Dのデータを扱うためのライブラリとしてはOpen3Dがある。
+### 利用性の高い機能
+- ３Dデータを扱うためのデータ形式
+- 視差データを深度データに変換する。
+- 深度データを点群データにする。
+- 点群データの座標変換を実施する
+- 視点を設定して点群データを２次元画像に射影する。
+
+### 組込時には使わない、開発時に利用する機能
+- 結果の表示機能
+  - 結果の表示機能は、結果をネットワーク越しに受け渡して、作業用PCで表示させるという使い方もある。
+
 
 [Open3D](https://www.open3d.org/)
 
@@ -15,4 +27,14 @@ Open3Dは、多くの研究プロジェクトで使用されており、クラ�
 
 [Open3D-ML](https://github.com/isl-org/Open3D-ML)
 An extension of Open3D to address 3D Machine Learning tasks
+
+
+## CUDAが利用可能な環境では、Open3DもCUDA対応の版を使うのがよい。
+
+[Open3D with CUDA](https://zenn.dev/yutashx/scraps/577ae6230ebb82)
+
+## OpenGL
+Open3DはOpenGLを内部で利用している。
+OpenGLの記述能力は細かい部分まで可能であるが、ライブラリを使いこなすのがむずかしい。
+Open3Dから表示させた方が、表示が楽だろう。
 

@@ -65,6 +65,7 @@
 ## 第８章　試験的な実装
 - [exprimental](8_exprimental.md)
 - 開発 [development](8_1_development.md)
-- [open3d](8_2_open3d.md)
+- Open3D [open3d](8_2_open3d.md)
+- [task design](8_3_task_design.md)
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
