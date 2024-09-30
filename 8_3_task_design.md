@@ -92,6 +92,7 @@ dimensions # その座標系と単位での物体のbounding boxの大きさに�
 解説記事：
 [ZED SDK でcustom detectorを使う](https://qiita.com/nonbiri15/items/05c9a9cc7066b0ba04cf)
 
+この２Dでの検出結果を３Dとして解釈し直す仕組みは、他の３Dカメラに対しても有効である。
 
 #### Open Vocabulary での物体検出・セグメンテーション
 視覚言語モデルの進展は、従来の限られた物体検出から、任意の言葉による物体検出を可能にしている。
@@ -99,4 +100,12 @@ dimensions # その座標系と単位での物体のbounding boxの大きさに�
 
 - [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO)
 - [Grounded-Segment-Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything)
+
+
+## 新たな定式化の１例
+論文 "Formula-Supervised Visual-Geometric Pre-training" です！
+2D画像・3D点群のモダリティを単一Transformerで扱い、識別・検出・領域分割タスク全てで事前学習効果があります。
+今後、Multimodal Pre-training手法として拡張できるポテンシャルがあります。
+[Formula-Supervised Visual-Geometric Pre-training](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03233.pdf)
+[project page](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3233_ECCV_2024_paper.php)
 
