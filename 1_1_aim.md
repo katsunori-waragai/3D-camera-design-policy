@@ -61,6 +61,32 @@ array([[2, 0, 0],
 
 このような共通のインタフェース設計が、機械学習のライブラリを利用しやすくした。
 
+共通のインタフェースの利点は、以下のようなコードで、4種類のアルゴリズムに対して、
+fit(), predict()が共通なことが効いている。
+
+```.py:
+# Fit estimators
+ESTIMATORS = {
+    "Extra trees": ExtraTreesRegressor(
+        n_estimators=10, max_features=32, random_state=0
+    ),
+    "K-nn": KNeighborsRegressor(),
+    "Linear regression": LinearRegression(),
+    "Ridge": RidgeCV(),
+}
+
+y_test_predict = dict()
+for name, estimator in ESTIMATORS.items():
+    estimator.fit(X_train, y_train)
+    y_test_predict[name] = estimator.predict(X_test)
+```
+
+[引用元のスクリプト](https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_multioutput_face_completion.html#sphx-glr-auto-examples-miscellaneous-plot-multioutput-face-completion-py)
+
+![](https://scikit-learn.org/stable/_images/sphx_glr_plot_multioutput_face_completion_001.png)
+スクリプトの実行結果
+
+
 
 ## この宣言がめざすこと
 - タスクへの入出力が同じアルゴリズムであれば、アルゴリズムの種類が変わっても、同一のインタフェース設計でコードを書ける。
