@@ -63,3 +63,40 @@ Obstacle Detection: Zhao, Y., & Shi, Y. (2016). A novel obstacle detection metho
 ## 自前データセットの重要性
 - 自社の製品・サービスに機械学習タスクを組み込む場合、評価が重要になってくる。
 - 大規模言語モデルのように汎用の目的に訓練されている場合でも、 自社の製品・サービスで性能が満たしているのかどうかは、 開発者チームの責任である。
+
+## どういう制約が可能であるか
+- 画像認識タスクは、カメラ入力データの品質という問題がつきまとい続ける。
+- そのため、性能が確保できるのは、いくつかの制約の範囲となる。
+- 実現しようとする作業が明確になっている場合には、品質を確保する条件として、動作条件に制約をつけよう。
+- その制約の範囲では、画像認識タスクは品質が安定しやすい。
+
+
+## 利用可能になっているタスク
+#### 2Dでの検出結果を3Dとして解釈しなおすこと。 3Dとしての物体追跡
+例：StereoLabsのZED　SDKにおいては、物体検出の結果を、３Dとして当てはめる機能がある。
+　そのことによって、物体検出結果の３D空間での追跡が可能になっている。
+　３Dでの追跡の場合、対象物が重なることがないため、人物が前後方向に重なっても、安定して追跡できる。
+コード例
+https://github.com/stereolabs/zed-sdk/blob/master/object%20detection/custom%20detector/python/pytorch_yolov8/detector.py
+
+```
+det = model.predict(img, save=False, imgsz=img_size, conf=conf_thres, iou=iou_thres)[0].cpu().numpy().boxes
+detections = detections_to_custom_box(det, image_net)
+```
+
+3Dとして解釈し直したあとのデータ型
+sl.ObjectData　型
+bounding_box　# 直方体としてのbounding boxです。8点の空間座標があります。
+dimensions # その座標系と単位での物体のbounding boxの大きさになります。
+
+解説記事：
+[ZED SDK でcustom detectorを使う](https://qiita.com/nonbiri15/items/05c9a9cc7066b0ba04cf)
+
+
+#### Open Vocabulary での物体検出・セグメンテーション
+視覚言語モデルの進展は、従来の限られた物体検出から、任意の言葉による物体検出を可能にしている。
+それらは、NVIDIA Jetson のような組み込み可能なデバイスにも移植されている。
+
+- [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO)
+- [Grounded-Segment-Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything)
+
