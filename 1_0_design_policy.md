@@ -12,17 +12,32 @@
 - アルゴリズム利用の際の結果データのデータ形式
   - ネットワーク間でそのデータを転送する際のインタフェース
 
+## 実装の利用例
+
+```
+    disparity_calculator = stereoigev.DisparityCalculator(args=args)
+    torch_image1 = stereoigev.as_torch_img(cv2.imread(str(imfile1)), is_BGR_order=True)
+    torch_image2 = stereoigev.as_torch_img(cv2.imread(str(imfile2)), is_BGR_order=True)
+    disparity = disparity_calculator.calc_by_torch_image(torch_image1, torch_image2)
+```
+
 
 ## class ベースの設計
 設計の例
 - インスタンスを生成する際に、最小限の設定をすれば、動作すること
 - defaultでも動作できるようにしておく
 - メソッドの実行の際には、画像を渡せば実行できるようにする。
+- 推論のメソッドで公開するインタフェース
+  - np.ndarray のインタフェース
+  - その実装で、もっとも効果的なインタフェース
 
 #### 後処理込みのAPI
 推奨：機械学習を含む場合でも、ユーザーに公開するAPIにおいては、後処理込みのものとすること
 非推奨： 深層学習後のネットワークの出力そのままを返すので、解釈可能にするためにユーザー側が後処理を別に実施する。
 
+#### しないこと
+- グローバル変数を極力残さない
+- 意味のまとまりが、classにまとめられていない。
 
 ## 画像データの選択肢
 
