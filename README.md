@@ -67,5 +67,8 @@
 - 開発 [development](8_1_development.md)
 - Open3D [open3d](8_2_open3d.md)
 - [task design](8_3_task_design.md)
+- [移植](8_4_porting.md)
+- [ドキュメント](8_5_module_doc.md)
+- [アルゴリズムの精度](8_6_alogrithm_accuracy.md)
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
