@@ -51,9 +51,10 @@
 [design policy](1_0_design_policy)
 ## 第２章　３Dカメラの選択
 [camera_selection](2_camera_selection.md)
-## 第３章　フレームの扱い
+## 第３章　フレームの扱いと代表的なタスク
 - [frames](3_0_frames)
 - [frames_depth](3_1_frames_depth.md)
+- [代表的なタスク](3_5_typical_task.md)
 ## 第４章　遅延時間とカメラ姿勢の問題
 [reducing latency and camera pose](4_reducing_latency.md)
 ## 第５章　スレッド処理
@@ -72,3 +73,8 @@
 - [アルゴリズムの精度](8_6_alogrithm_accuracy.md)
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
+
+## あなたにできること
+- このプロジェクトのドキュメントを自由に展開してください。
+- このプロジェクトで紹介するOSSの実装を自由にご利用ください。
+- 関連する有益な情報の入手先のURLを教えてください。反映します。
