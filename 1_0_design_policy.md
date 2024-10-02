@@ -86,7 +86,7 @@ for name, estimator in ESTIMATORS.items():
 ![](https://scikit-learn.org/stable/_images/sphx_glr_plot_multioutput_face_completion_001.png)
 スクリプトの実行結果
 
-
+このようにアルゴリズムが異なっても同一のインタフェースを持つことの利点は大きい。
 
 ## この宣言がめざすこと
 - タスクへの入出力が同じアルゴリズムであれば、アルゴリズムの種類が変わっても、同一のインタフェース設計でコードを書ける。

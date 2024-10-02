@@ -83,6 +83,7 @@ onnxは、インテルの各種デバイスで動作させることができま�
 - Jetson Deep Learning Accelerator (DLA)
 - Google TPU
 - Intel Movidius
+- Raspberry Pi
 - OpenCV AI Kit
 - HAILO
 - Qualcomm
