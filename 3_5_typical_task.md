@@ -7,6 +7,10 @@
 - 姿勢推定
   - PapersWithCode [Pose Estimation](https://paperswithcode.com/task/pose-estimation)
 - 顔照合・人物推定(re-identification)
+  - 顔照合は、マスク顔対応が終わった時点で、技術分野としては枯れた技術になりつつあります。（黒人対応はありますが）
+  - 利用予定のプラットフォームにある実装をまず調査してください。
+  - 対応OS,対応言語、依存ライブラリのバージョン、GPUなどのアクセラレータ対応の状況、今後のサポートの状況などを調査してください。
+  - 利用予定のカメラと想定しているユースケースでの顔画像を使って、評価します。
 - open vocabulary での物体検出
 PapersWithCode [Open Vocabulary Object Detection](https://paperswithcode.com/task/open-vocabulary-object-detection)
 - open vocabulary でのセグメンテーション
@@ -19,6 +23,10 @@ PapersWithCode [Open Vocabulary Object Detection](https://paperswithcode.com/tas
 ### 最近出てきた・増えてきた画像認識タスク
 ##### 3D Semantic Segmentation
 PapersWithCode [3D Semantic Segmentation](https://paperswithcode.com/task/3d-semantic-segmentation)
+
+
+[3D Object Detection From Stereo Images](https://paperswithcode.com/task/3d-object-detection-from-stereo-images)
+
 ##### affordance の検出
 ##### 物体の検出にともなうハンドによる把持動作の生成に近い分野
 
