@@ -27,26 +27,28 @@
 　それぞれのリポジトリは、Dockerfile の中で git clone している。
 　そのためこのリポジトリの中では、オリジナルのリポジトリをfork していない。
 ##### egohos-docker/
-	https://github.com/owenzlz/EgoHOS
-自己視点画像での腕検出と対象物の検出
-対象物は1st orderと 2nd orderとがある。
+-　https://github.com/owenzlz/EgoHOS
+- 自己視点画像での腕検出と対象物の検出 対象物は1st orderと 2nd orderとがある。
+![](https://github.com/owenzlz/EgoHOS/blob/main/demo/twohands_obj1_optimized.gif?raw=true)
+![](https://github.com/owenzlz/EgoHOS/blob/main/demo/twohands_obj2_optimized.gif?raw=true)
+![](https://github.com/owenzlz/EgoHOS/blob/main/demo/twohands_optimized.gif?raw=true)
 ##### grounded-sam-docker/
-	https://github.com/IDEA-Research/Grounded-Segment-Anything
-    Segmantation AnythingをOpen Vocabulary と関連付けたもの。
-　　Open Vocabularyで、物体の領域がピクセル単位でわかる。
+- https://github.com/IDEA-Research/Grounded-Segment-Anything0
+- Segmentation AnythingをOpen Vocabulary と関連付けたもの。
+- Open Vocabularyで、物体の領域がピクセル単位でわかる。
 ![https://github.com/IDEA-Research/Grounded-Segment-Anything/raw/main/assets/ram_grounded_sam_new.png]
 ##### groundingdino-docker/
-	https://github.com/IDEA-Research/GroundingDINO
-自然言語で指定した記述にそって物体検出ができる。
-文章で指定したものをなんでも検出できるAI Grounding DINO
+- https://github.com/IDEA-Research/GroundingDINO
+- 自然言語で指定した記述にそって物体検出ができる。
+- 文章で指定したものをなんでも検出できるAI Grounding DINO
 ##### nanoowl-docker/
-	https://github.com/NVIDIA-AI-IOT/nanoowl
-	既にJetson対応済み
-    Jetsonで高速に操作するように移植されたOWL-ViT 
+- https://github.com/NVIDIA-AI-IOT/nanoowl
+- Jetson対応済み
+- Jetsonで高速に操作するように移植されたOWL-ViT 
+- これも自然言語で指定した記述にそって物体検出ができる。
 ![](https://github.com/NVIDIA-AI-IOT/nanoowl/blob/main/assets/jetson_person_2x.gif)
-これも自然言語で指定した記述にそって物体検出ができる。
 ##### nanosam-docker/
-	https://github.com/NVIDIA-AI-IOT/nanosam
-	既にJetson対応済み
-  　Jetsonで高速に操作するように移植されたSegmantation Anything
+- https://github.com/NVIDIA-AI-IOT/nanosam
+- 既にJetson対応済み
+- Jetsonで高速に操作するように移植されたSegmantation Anything
 ![](https://github.com/NVIDIA-AI-IOT/nanosam/raw/main/assets/basic_usage_out.jpg)
