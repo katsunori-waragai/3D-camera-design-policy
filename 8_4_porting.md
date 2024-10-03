@@ -42,3 +42,5 @@ https://docs.openvino.ai/2024/ovms_docs_mediapipe.htmlo
 
 ## 移植作業を行うことの効果
 - 既存のフレームワーク（例：Pytorch、TensorRT)の使い方に詳しくなります。
+- cuda関連も含めて、機械学習系のライブラリはだいぶ癖があります。
+- 例：いっけん使っていないように見えるimport 文だが、消すと動作しなくなるスクリプトとかがある。
