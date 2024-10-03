@@ -60,3 +60,20 @@ https://paperswithcode.com/task/stereo-matching-1/latest#datasets
 ##### 機械学習エンジニアに、DevOps エンジニアからの手助けを
 - 機械学習・画像認識のエンジニアは、クラウドサービスの構築のプロではありません。
 - 社内で彼らの手助けを得られるようにしてください。
+- [DVC で利用可能なクラウドストレージサービス](https://dvc.org/doc/user-guide/data-management/remote-storage)
+```commandline
+Supported storage types
+Cloud providers
+Amazon S3 (AWS) and S3-compatible e.g. MinIO
+Microsoft Azure Blob Storage
+Google Cloud Storage (GCP)
+Google Drive
+Aliyun OSS
+```
+
+
+##### 画像系のエンジニアには、データベースエンジニアからの手助けを
+- 画像系のエンジニアは、データベースのプロではありません。
+- python使いの場合には[sqlite3](https://docs.python.org/ja/3/library/sqlite3.html) を使って簡単なsqlデータベースを使う場合もあります。
+- 本格的なデータベースを構築する必要があれば、その道のプロに任せることです。
+  - データベースサーバーの運用・バックアップ・セキュリティ対策
