@@ -18,6 +18,9 @@
 　学習によって単眼カメラの画像からdepthを推定するもの。
 　（ライブラリ自体は視差相当量を出すものになっている。そのため深度の絶対値は不明である）
 
+[Combining zed2 and segment anything](https://community.stereolabs.com/t/combining-zed2-and-segment-anything/2989)
+
+
 (2) stereo libraries
   従来は、ステレオ計測の手法によって算出されるもの。近年は対応点がとれない領域に対しての深層学習（もしくはViT）によって推測されるものになっている。
 (3) Dynamic-multiframe-depth
@@ -30,12 +33,16 @@
 自分の手の位置を補正するように動かす。
 
 - [Dynamic-multiframe-depth](https://github.com/ruili3/dynamic-multiframe-depth)
-![](https://github.com/ruili3/dynamic-multiframe-depth/raw/main/pictures/dynamic_depth_result.gif)
+- ![](https://github.com/ruili3/dynamic-multiframe-depth/raw/main/pictures/dynamic_depth_result.gif)
 - [ProDepth: Boosting Self-Supervised Multi-Frame Monocular Depth with Probabilistic Fusion](https://github.com/Sungmin-Woo/ProDepth)
 - [Generating Consistent Long Depth Sequences for Open-world Videos](https://depthcrafter.github.io/)
 pdf [DepthCrafter: Generating Consistent Long Depth Sequences for Open-world Videos](https://depthcrafter.github.io/pdf/DepthCrafter.pdf)
 
 https://x.com/NaveenManwani17/status/1831426496797536512
+
+
+[14. Multi-Frame Stereo](http://stereo--vision.com/kiji14e.html)
+[Fast Multi-frame Stereo Scene Flow with Motion Segmentation](https://arxiv.org/abs/1707.01307)
 
 
 (4) 調査中
@@ -53,3 +60,7 @@ pdf [Fast Multi-frame Stereo Scene Flow with Motion Segmentation](https://arxiv.
 
 DeepL.com（無料版）で翻訳しました。
 
+---
+- Github [Awesome-Deep-Stereo-Matching](https://github.com/fabiotosi92/Awesome-Deep-Stereo-Matching?tab=readme-ov-file#frameworks)
+ A curated list of awesome Deep Stereo Matching resources
+- pdf [A Survey on Deep Stereo Matching in the Twenties](https://arxiv.org/pdf/2407.07816v1)
