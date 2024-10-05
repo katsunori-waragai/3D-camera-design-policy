@@ -30,6 +30,7 @@
 自分の手の位置を補正するように動かす。
 
 - [Dynamic-multiframe-depth](https://github.com/ruili3/dynamic-multiframe-depth)
+![](https://github.com/ruili3/dynamic-multiframe-depth/raw/main/pictures/dynamic_depth_result.gif)
 - [ProDepth: Boosting Self-Supervised Multi-Frame Monocular Depth with Probabilistic Fusion](https://github.com/Sungmin-Woo/ProDepth)
 - [Generating Consistent Long Depth Sequences for Open-world Videos](https://depthcrafter.github.io/)
 pdf [DepthCrafter: Generating Consistent Long Depth Sequences for Open-world Videos](https://depthcrafter.github.io/pdf/DepthCrafter.pdf)
