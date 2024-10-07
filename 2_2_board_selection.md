@@ -3,6 +3,9 @@ PCやMacを使うのでなければ、ボードの選択が必要になる。
 MacでもPyTorchが利用できるらしい。
 
 ### NVIDIA Jetson AGX Orin
+シングルボードコンピュータとして、NVIDIA Jetson AGX Orinを使うことができます。
+
+SOM　Jetson Orin NX, Jeston Orin Nano
 
 ### Raspberry Pi
 raspberry pi 5 
@@ -38,3 +41,9 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
   - HDMIポート, DisplayPort
   - 開発時のメモリの潤沢さ
   - 開発時のディスク領域の潤沢さ
+
+## カスタムボード
+- カメラの数を増やす、カメラインタフェースを追加するなどの状況では、開発キットにあるボードコンピュータでは適さなくなります。
+- そのボードのSystem on Module (SOM) を利用しつつ、それと組み合わせるカスタムボードが必要になります。
+- これらは、画像認識屋・機械学習屋の領域を超える範囲の作業です。
+- しかるべき人に対応してもらいましょう。
