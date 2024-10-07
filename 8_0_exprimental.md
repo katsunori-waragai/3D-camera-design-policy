@@ -9,6 +9,10 @@
 　ステレオ計測アルゴリズムの１例を、モジュールとしてインストール可能なように改変したもの。
 　保存した結果は、上述のviewer によって可視化できる。
 
+### https://github.com/katsunori-waragai/libstereosgbm
+ ステレオ計測アルゴリズムの１例、ここではOpenCVのStereoSGBMを、同様なインタフェースをもつモジュールとしてインストール可能なように改変したもの。
+　実装自体に新規性はない。
+
 ### https://github.com/katsunori-waragai/depth-anything-zed
  単眼画像に対する深度予測のライブラリにdepth-anythingがある。
  それをJetson AGX orin に移植してある実装を、モジュールとしてインストール可能なように改変したもの。
