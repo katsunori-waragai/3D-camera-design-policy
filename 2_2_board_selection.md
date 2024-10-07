@@ -27,6 +27,15 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 ### Renesas
 [kakip](https://www.kakip.ai/)
 
+### Hailo
+[Hailo-8 AI Accelerator](https://hailo.ai/ja/products/ai-accelerators/hailo-8-ai-accelerator/)
+
+### Coral USB Accelerator
+[Coral USB Accelerator](https://coral.ai/products/accelerator/)
+
+### VPU
+[Movidius™ ビジョン・プロセシング・ユニット (VPU)](https://www.intel.co.jp/content/www/jp/ja/products/details/processors/movidius-vpu.html)
+
 
 ## ボード選択のポイント
 - CPU, GPUなどのアクセラレータ, OS
