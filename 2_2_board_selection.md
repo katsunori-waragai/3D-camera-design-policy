@@ -16,7 +16,7 @@ raspberry pi 5
 ### Qualcomm
 [Qualcomm Neural Processing SDK for AI](https://www.qualcomm.com/developer/software/neural-processing-sdk-for-ai)
 
-### SONY
+### SONY SPRESENSE
 [SPRESENSE](https://www.sony-semicon.com/ja/products/spresense/index.html)
 [Neural Network Console](https://dl.sony.com/ja/)
 【Neural Network Consoleクラウド版サービス終了のお知らせ】
@@ -24,7 +24,7 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 なお有償の法人向けプランをご利用頂いているお客様向けには別途終了時期のご連絡をさせて頂きます。
 またNeural Network Console Windows版は提供を継続いたしますので引き続きご活用ください。
 
-### Renesas
+### Renesas　kakip
 [kakip](https://www.kakip.ai/)
 
 ### Hailo
