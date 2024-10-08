@@ -52,6 +52,7 @@
 ## 第２章　３Dカメラの選択
 [camera_selection](2_1_camera_selection)
 [board_selection](2_2_board_selection.md)
+[framework_selection](2_3_framework_selection.md)
 ## 第３章　フレームの扱いと代表的なタスク
 - [frames](3_0_frames)
 - [frames_depth](3_1_frames_depth.md)
