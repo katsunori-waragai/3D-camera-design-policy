@@ -59,6 +59,12 @@ Movidius Neural Compute Stick (NCS),
   - 開発時のメモリの潤沢さ
   - 開発時のディスク領域の潤沢さ
 
+- 3Dカメラ対応
+  - 3Dカメラを選択した時点で、可能なボードは限られる。
+  - 3Dカメラのデバイスドライバー、3Dカメラを用いたSDKの時点で、可能なボードとOSと言語の組合せは限定される。
+  - 例：StereoLabs　ZED2i: Windows10/11, Ubuntu PC+ Cuda GPU. Ubuntu Jetson 
+  - 例:RealSense: Windows, Linux, Android, macOS 
+
 ## カスタムボード
 - カメラの数を増やす、カメラインタフェースを追加するなどの状況では、開発キットにあるボードコンピュータでは適さなくなります。
 - そのボードのSystem on Module (SOM) を利用しつつ、それと組み合わせるカスタムボードが必要になります。

@@ -7,6 +7,23 @@
 学習用・評価用の環境は、実装するアルゴリズムのソースコードの利用している環境になるだろう。
 PyTorch, Tensorflow, Keras などが使われているだろうか。
 
+PyTorch
+
+Tensorflow
+
+Keras
+
+huggingface
+
+Ultralytics
+github https://github.com/ultralytics/ultralytics
+
+MMDetection
+
+[物体検出モデルがよりどりみどり　MMdetectionの使いかた](https://qiita.com/john-rocky/items/4d8888bee7a4592f1fc8)
+
+
+
 ## deploy先のframe work
 
 deploy 先のframework　は、ボードやアクセラレータを選択した時点で決まるだろう。
