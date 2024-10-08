@@ -7,6 +7,8 @@ MacでもPyTorchが利用できるらしい。
 
 SOM　Jetson Orin NX, Jeston Orin Nano
 
+大半の機械学習のフレームワークが動作する。
+
 ### Raspberry Pi
 raspberry pi 5 
 
@@ -30,11 +32,17 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 ### Hailo
 [Hailo-8 AI Accelerator](https://hailo.ai/ja/products/ai-accelerators/hailo-8-ai-accelerator/)
 
+[Hailo-8 Edge AI Accelerator Deployment Guide](https://tlab.hongo.wide.ad.jp/2024/03/04/hailo-8-edge-ai-accelerator-deployment-guide/)
+
+HailoModelZoo/docs/GETTING_STARTED.rst
+https://github.com/hailo-ai/hailo_model_zoo/blob/master/docs/GETTING_STARTED.rst
+
 ### Coral USB Accelerator
 [Coral USB Accelerator](https://coral.ai/products/accelerator/)
 
 ### VPU
 [Movidius™ ビジョン・プロセシング・ユニット (VPU)](https://www.intel.co.jp/content/www/jp/ja/products/details/processors/movidius-vpu.html)
+Movidius Neural Compute Stick (NCS),
 
 
 ## ボード選択のポイント
@@ -79,3 +87,7 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 ## ターゲットのボードへの移行
 - 学習・評価環境からのdeploy方法を自動化させておく。
 - 計算リソースに余力があるようにターゲットボードを選択する。
+
+## ボードはいずれEOLになる
+ベースとなる学習・評価用のデータ、学習・評価用のソフトウェアをメンテナンスし続けること。
+将来、別のターゲットのボードがでてきたときに、変換してdeploy できるようにする。
