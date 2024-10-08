@@ -119,3 +119,9 @@ dimensions # その座標系と単位での物体のbounding boxの大きさに�
 [Formula-Supervised Visual-Geometric Pre-training](https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/03233.pdf)
 [project page](https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3233_ECCV_2024_paper.php)
 
+## 過去は別タスクだったものが、同一のタスクになったもの
+- 人の各部位の物体検出
+  - 人体全体・頭部・眼・鼻・口・手の検出
+  - https://github.com/PINTO0309/PINTO_model_zoo/tree/main/459_YOLOv9-Wholebody25
+- 物体検出とインスタンスセグメンテーション
+  - 例: YoloV9など
