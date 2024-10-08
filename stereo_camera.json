@@ -25,5 +25,14 @@
     "SDK_download_site": "https://www.xvisiotech.com/sdk-download/",
     "interface": ["USB"],
     "ROS1_url": "https://www.xvisiotech.com/xvisio-sdk-doc/03_xvisio_sdk_install/03_03_install_ros/xvisio_install_ros-en.html"
-  }
+  },
+  {
+    "maker": "https://shop.luxonis.com/",
+    "products": ["OAK-D"],
+    "url": "https://shop.luxonis.com/products/oak-d",
+    "SDK_github": "https://github.com/luxonis/depthai",
+    "SDK_download_site": "https://docs.luxonis.com/software/depthai/manual-install/",
+    "interface": ["USB"],
+    "ROS1_url": "https://github.com/luxonis/depthai-ros"
+  },
 ]
