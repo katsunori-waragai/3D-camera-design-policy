@@ -1,0 +1,11 @@
+[
+  {
+    "maker": "https://www.stereolabs.com/en-jp",
+    "products": ["ZED2i", "ZED-X", "ZED-mini"],
+    "url": "https://www.stereolabs.com/en-jp/products/zed-2",
+    "SDK_github": "https://github.com/stereolabs/zed-sdk",
+    "SDK_download_site": "https://www.stereolabs.com/en-jp/developers",
+    "interface": ["USB", "GMSL", "USB"],
+    "ROS2_url": "https://www.stereolabs.com/docs/ros2",
+  },
+]
