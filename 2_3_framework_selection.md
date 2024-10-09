@@ -27,9 +27,12 @@ pip install keras
 pip install huggingface
 LLM系の実装が多い。
 - [Ultralytics](https://github.com/ultralytics/ultralytics)
+「detection, segmentation, classification, tracking and pose estimation」が用意されている。
 pip install ultralytics
 
 - [MMDetection](https://github.com/open-mmlab/mmdetection)
+- MMDetectionのフレームワークでは以下のリンクに示すように多数のタスクにある実装が公開されている。
+[Projects in OpenMMLab](https://github.com/open-mmlab/mmdetection3d?tab=readme-ov-file#projects-in-openmmlab)
 
 [物体検出モデルがよりどりみどり　MMdetectionの使いかた](https://qiita.com/john-rocky/items/4d8888bee7a4592f1fc8)
 

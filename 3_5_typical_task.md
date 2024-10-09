@@ -13,7 +13,12 @@
   - 利用予定のカメラと想定しているユースケースでの顔画像を使って、評価します。
 - open vocabulary での物体検出
 PapersWithCode [Open Vocabulary Object Detection](https://paperswithcode.com/task/open-vocabulary-object-detection)
+
+[Open vocabulary object detection with NVIDIA Grounding-DINO](https://www.nvidia.com/ja-jp/on-demand/session/other2024-tao55gdino/)
+
 - open vocabulary でのセグメンテーション
+- PapersWithCode [Open Vocabulary Semantic Segmentation](https://paperswithcode.com/task/open-vocabulary-semantic-segmentation)
+
 
 ## 自律移動ロボットでよくあるタスク
 - SLAM
