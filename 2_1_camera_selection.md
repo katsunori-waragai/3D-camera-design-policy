@@ -121,7 +121,12 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## 3Dカメラ選択における私見
 - サポートが十分になされているメーカーの製品を使おう。
 - SDKがしっかりしていて、サンプルアプリケーションも充実しているのを選ぼう。
-
+- Digital twinやシミュレーション空間における強化学習を行う際には、カメラの特性をシミュレーションできることが重要になる。
+  - そこまでの対応を行なっているカメラはとても少ない。
+  - https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/assets/usd_assets_sensors.html#camera-and-depth-sensors
+    - Intel RealSense D455, Orbbec Gemini 2, StereoLabs ZED X などがある。
+  - https://docs.omniverse.nvidia.com/isaacsim/latest/features/sensors_simulation/isaac_sim_sensors_camera.html
+  - https://docs.omniverse.nvidia.com/materials-and-rendering/latest/cameras.html
 
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
