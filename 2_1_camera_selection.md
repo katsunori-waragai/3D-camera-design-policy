@@ -91,6 +91,43 @@ stereocamera が特徴をつかみにくい領域で、視差の計算をする�
 ## カメラキャリブレーションについての記事
 https://kushalvyas.github.io/calib.html
 
+## ステレオカメラの種々のサポートレベル
+- レンズとイメージセンサがある
+  - デバイスドライブは各自作ってくれというレベル
+  - カメラの固定と、温度に対する安定性は自分でやってくれ
+  - ステレオ平行化のためのカメラパラメータの算出も自分でやってね。
+- レンズとイメージセンサとデバイスドライバがあるだけのレベル
+  - 視差の計算・深度の計算は勝手にやってくれというレベル 
+- レンズとイメージセンサとデバイスドライバがあり、視差と深度の計算までは対応しているレベル
+  - 点群への処理は自分でやってくれというレベル
+-　レンズとイメージセンサとデバイスドライバがあり、視差と深度の計算し、点群への変換も含んでいるレベル
+  - IMUやタイムスタンプをサポートしていることがある。
+  - IMUを考慮後の世界座標での点群が得られる。
+-　上記のレベルを満たしたうえで、物体検出との連携があり、追跡も３次元で行われるレベル。
+  - そのようなサンプルコードがgithub上に公開されている。
+
+#### ステレオ計算とアクセラレータ
+ステレオカメラの種類によっては、深度計算の部分を行う機能をUSBデバイスの中に最初から含んでいるものもある。
+独自のデバイスを含んでいるもの
+https://shop.luxonis.com/products/oak-d
+https://www.xvisiotech.com/product/seersense-ds80-st/
+https://www.orbbec.com/products/stereo-vision-camera/gemini-336/
+
+CUDAデバイスを前提としているもの
+https://www.stereolabs.com/en-jp/store/products/zed-2i
+
+
+
+## 3Dカメラ選択における私見
+- サポートが十分になされているメーカーの製品を使おう。
+- SDKがしっかりしていて、サンプルアプリケーションも充実しているのを選ぼう。
+- Digital twinやシミュレーション空間における強化学習を行う際には、カメラの特性をシミュレーションできることが重要になる。
+  - そこまでの対応を行なっているカメラはとても少ない。
+  - https://docs.omniverse.nvidia.com/isaacsim/latest/features/environment_setup/assets/usd_assets_sensors.html#camera-and-depth-sensors
+    - Intel RealSense D455, Orbbec Gemini 2, StereoLabs ZED X などがある。
+  - https://docs.omniverse.nvidia.com/isaacsim/latest/features/sensors_simulation/isaac_sim_sensors_camera.html
+  - https://docs.omniverse.nvidia.com/materials-and-rendering/latest/cameras.html
+
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
 - [ステレオカメラ調査(2023年版）](https://qiita.com/nonbiri15/items/a8590a99941f8de4c8b8)

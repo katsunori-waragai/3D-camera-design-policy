@@ -1,0 +1,38 @@
+[
+  {
+    "maker": "https://www.stereolabs.com/en-jp",
+    "products": ["ZED2i", "ZED-X", "ZED-mini"],
+    "url": "https://www.stereolabs.com/en-jp/products/zed-2",
+    "SDK_github": "https://github.com/stereolabs/zed-sdk",
+    "SDK_download_site": "https://www.stereolabs.com/en-jp/developers",
+    "interface": ["USB", "GMSL", "USB"],
+    "ROS2_url": "https://www.stereolabs.com/docs/ros2",
+  },
+  {
+    "maker": "https://www.orbbec.com/",
+    "products": ["Gemini336"],
+    "url": "https://www.orbbec.com/products/stereo-vision-camera/gemini-336/",
+    "SDK_github": "https://github.com/orbbec/OrbbecSDK",
+    "SDK_download_site": "https://www.orbbec.com/developers/orbbec-sdk/",
+    "interface": ["USB"],
+    "ROS2_url": "https://github.com/orbbec/OrbbecSDK_ROS2"
+  },
+  {
+    "maker": "https://www.xvisiotech.com/",
+    "products": ["SeerSense DS80-ST Module"],
+    "url": "https://www.xvisiotech.com/product/seersense-ds80-st/",
+    "SDK_github": "",
+    "SDK_download_site": "https://www.xvisiotech.com/sdk-download/",
+    "interface": ["USB"],
+    "ROS1_url": "https://www.xvisiotech.com/xvisio-sdk-doc/03_xvisio_sdk_install/03_03_install_ros/xvisio_install_ros-en.html"
+  },
+  {
+    "maker": "https://shop.luxonis.com/",
+    "products": ["OAK-D"],
+    "url": "https://shop.luxonis.com/products/oak-d",
+    "SDK_github": "https://github.com/luxonis/depthai",
+    "SDK_download_site": "https://docs.luxonis.com/software/depthai/manual-install/",
+    "interface": ["USB"],
+    "ROS1_url": "https://github.com/luxonis/depthai-ros"
+  },
+]

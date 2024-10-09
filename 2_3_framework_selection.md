@@ -7,21 +7,41 @@
 学習用・評価用の環境は、実装するアルゴリズムのソースコードの利用している環境になるだろう。
 PyTorch, Tensorflow, Keras などが使われているだろうか。
 
-PyTorch
+[PyTorch](https://pytorch.org/)
+Cudaデバイス以外でも利用できるようになってきている。Mac用の版も存在する。
 
-Tensorflow
+pip install torch
 
-Keras
+[Tensorflow](https://www.tensorflow.org/?hl=ja)
+NVIDIA GPU、Google TPUで動作する。
 
-huggingface
+pip install tensorflow
 
-Ultralytics
-github https://github.com/ultralytics/ultralytics
+[onnx](https://onnx.ai/)
 
-MMDetection
+- [Keras](https://keras.io/)
+Kerasは、主にTensorflowをバックエンドとして動作します。
+pip install keras
+
+- [huggingface](https://huggingface.co/)
+pip install huggingface
+LLM系の実装が多い。
+- [Ultralytics](https://github.com/ultralytics/ultralytics)
+pip install ultralytics
+
+- [MMDetection](https://github.com/open-mmlab/mmdetection)
 
 [物体検出モデルがよりどりみどり　MMdetectionの使いかた](https://qiita.com/john-rocky/items/4d8888bee7a4592f1fc8)
 
+
+#### 学習用・評価用のフレームワークに対する私見
+- あなたが関心を持っているタスクの分野で一番に使われているフレームワークを使うべきだと考える。
+- 学習用・評価用のデータセットの規模は年々大きくなるし、DVC（Data Version Control）や他のMLopsのフレームワークを使うことになるだろう。
+- 開発チームの方針に合わせることだ。
+
+#### 新規に考える必要性は少ないフレームワーク
+Caffe
+Chainer
 
 
 ## deploy先のframe work
