@@ -51,3 +51,16 @@ PapersWithCode [3D Reconstruction](https://paperswithcode.com/task/3d-reconstruc
 ##### Visual Question Answering (VQA)
 - PapersWithCode [Visual Question Answering (VQA)](https://paperswithcode.com/task/visual-question-answering)
 
+## 大規模言語モデルは、避けて通れない
+#### PC・クラウドサービスでの推論
+主に国内の動向から
+
+[Heron A Library for Vision / Video and Language models](https://github.com/turingmotors/heron)
+
+#### 組み込みデバイスでの推論
+
+[Openな資産とFPGAを活用して、領域特化型のProcessorを作ろう！](https://www.docswell.com/s/TIER_IV/ZG6LJK-2022-04-26-162717)
+
+github [Swan A Lightweight Language Model Execution Environment Using FPGA](https://github.com/turingmotors/swan)
+[言語モデルを高位合成でFPGAに実装してみた](https://zenn.dev/turing_motors/articles/82505880d27d65)
+
