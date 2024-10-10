@@ -30,3 +30,10 @@ https://github.com/EnVision-Research/Lotus
 [x(Twitter)](https://x.com/NaveenManwani17/status/1843358537776541811)
 
 
+
+## 配管内でのステレオ計測
+https://www.olympus-ims.com/en/remote-visual-inspection/videoscope/introduction-to-visual-inspection-measurement-solutions/
+
+https://ieeexplore.ieee.org/document/9735082
+
+https://www.ri.cmu.edu/pub_files/2011/10/2011_IROS.pdf
