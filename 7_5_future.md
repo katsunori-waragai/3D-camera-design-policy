@@ -30,3 +30,18 @@ https://github.com/EnVision-Research/Lotus
 [x(Twitter)](https://x.com/NaveenManwani17/status/1843358537776541811)
 
 
+
+## 配管内でのステレオ計測
+https://www.olympus-ims.com/en/remote-visual-inspection/videoscope/introduction-to-visual-inspection-measurement-solutions/
+
+https://ieeexplore.ieee.org/document/9735082
+
+https://www.ri.cmu.edu/pub_files/2011/10/2011_IROS.pdf
+
+[ステレオカメラを用いたトンネル切羽監視システムの開発](https://www.satokogyo.co.jp/news/detail.php?id=344)
+
+ステレオ計測の際に、エッジ処理した画像を入力としてみよう。
+エッジ処理した画像で改善されると期待する部分
+左右のカメラ間で、ゲインが微妙に異なっている場合、
+左右のカメラで見た時に、対象物の明るさが違って見える場合
+
