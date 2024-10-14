@@ -3,6 +3,7 @@ PCやMacを使うのでなければ、ボードの選択が必要になる。
 (PCの場合にはGPUのボードということもある。)
 MacでもPyTorchが利用できるらしい。
 
+## シングルボードコンピュータ系
 ### NVIDIA Jetson AGX Orin
 シングルボードコンピュータとして、NVIDIA Jetson AGX Orinを使うことができます。
 
@@ -30,6 +31,10 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 ### Renesas　kakip
 [kakip](https://www.kakip.ai/)
 
+## アクセラレータ系
+アクセラレータ系は、接続可能なボードの種類（CPU, OS, インタフェース）などを確認すること。
+画像データのような大量のデータの扱いがどうなるかを調べること。
+なかには、３Dカメラの中にはMovidius などのデバイスを予めもっているものもある。
 ### Hailo
 [Hailo-8 AI Accelerator](https://hailo.ai/ja/products/ai-accelerators/hailo-8-ai-accelerator/)
 
@@ -46,8 +51,6 @@ https://github.com/hailo-ai/hailo_model_zoo/blob/master/docs/GETTING_STARTED.rst
 Movidius Neural Compute Stick (NCS),
 
 
-シングルボードコンピュータとはならなもの
-
 ## ボード選択のポイント
 まずは、Raspberry Pi 5や、Jetson AGX Orin などのボードの仕様から確認しよう。
 
@@ -62,6 +65,13 @@ Movidius Neural Compute Stick (NCS),
     - USBカメラから、3Dカメラへの給電をしているのが大半であり、複数のデバイスに給電していると、ボードによっては給電能力が不足する場合があることに注意。
   - ネットワーク性能
   - wifi の対応の有無
+  - GPIO
+-　ロボティクス分野で必要になるインタフェース
+  - 利用する製品分野によっては、使用するインターフェースが決められている。
+  - [「OPC UA for Robotics」で解決したい課題](https://monoist.itmedia.co.jp/mn/articles/2003/25/news006_2.html)の記事に見る限り、とても標準化されていない。
+  - 画像認識屋は、[PLC](https://www.fa.omron.co.jp/product/special/library/robotics/plc/)など知らない。
+  - [Ethercat](https://www.macnica.co.jp/business/semiconductor/articles/texas_instruments/125025/)も知らない。
+  - 
 - 開発のしやすさ
   - ネットワーク必須（機械学習・画像認識では、ネットワークなしの開発は考えられない）
   - HDMIポート, DisplayPort
@@ -111,3 +121,5 @@ Movidius Neural Compute Stick (NCS),
 ## ボードはいずれEOLになる
 ベースとなる学習・評価用のデータ、学習・評価用のソフトウェアをメンテナンスし続けること。
 将来、別のターゲットのボードがでてきたときに、変換してdeploy できるようにする。
+
+[PyTorchをM1 MacBook のGPU(MPS)で動かす．実行時間の検証もしたよ](https://zenn.dev/hidetoshi/articles/20220731_pytorch-m1-macbook-gpu)
