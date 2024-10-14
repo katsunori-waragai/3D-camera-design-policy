@@ -1,5 +1,8 @@
 # depth
 
+深度の推定は、３Dの再構築としてとらえ直すことができる。
+
+
 
 | |mono camera | stereo camera (3D camera) |
 |---|----|---------------------------|
@@ -52,6 +55,28 @@ pdf [Fast Multi-frame Stereo Scene Flow with Motion Segmentation](https://arxiv.
 注意：multi-frame でのデータセットの例が、圧倒的に車載カメラに偏っている。
 そのため、ロボットの頭部で見る画像がロボットの歩行や頭部の姿勢変化によって変わるような動画での例が
 少なそうである。
+
+[Generalizable Novel-View Synthesis using a Stereo Camera](https://jinwonjoon.github.io/stereonerf/)
+本論文では、特に多視点ステレオカメラ画像を対象とした、一般化可能なビュー合成アプローチを初めて提案する。
+近年のステレオマッチングが正確な形状予測を実証していることから、我々はステレオマッチングを新規ビュー合成に導入し、
+高品質な形状再構成を実現する。
+この目的のため、本論文では、ステレオマッチングをNeRFベースの一般化可能なビュー合成アプローチに統合する、
+StereoNeRFと呼ばれる新しいフレームワークを提案する。
+StereoNeRFは、ノービュー合成においてステレオマッチングを効果的に利用するための3つの主要コンポーネント、
+すなわち、ステレオ特徴抽出器、奥行きガイド付き平面掃引、ステレオ奥行き損失、を備える。
+さらに、StereoNVSデータセットを提案する。
+StereoNVSデータセットは、実シーンと合成シーンの両方を含む、初のステレオカメラ画像のマルチビューデータセットである。
+我々の実験結果は、StereoNeRFが一般化可能なビュー合成において、これまでのアプローチを凌駕していることを示している。
+
+DeepL.com（無料版）で翻訳しました。
+[pdf](https://jinwonjoon.github.io/stereonerf/StereoNeRF_files/main.pdf)
+[StereoNeRF](https://github.com/Haechan21/StereoNeRF)
+StereoNVS-Real: CC BY-NC 3.0 DEED (Non-commercial use)
+BlendedMVS-stereo: CC BY-NC 3.0 DEED (Non-commercial use)
+
+
+[Neural Fields for Structured Lighting](https://openaccess.thecvf.com/content/ICCV2023/papers/Shandilya_Neural_Fields_for_Structured_Lighting_ICCV_2023_paper.pdf)
+
 
 (6)
 - [Generalizable Novel-View Synthesis using a Stereo Camera](https://jinwonjoon.github.io/stereonerf/)
