@@ -39,12 +39,29 @@
 ## 表示方法の問題
 - アルゴリズムのモジュールにおいては、画像表示・点群表示・top viewの表示自体もライブラリ化した部分には含めない。
 - 理由：画像認識モジュールは、head less のシステムで利用されることが想定されるため。
+- 実装例：
+ 以下のような表示を作るためのモジュールのAPIを提供する。
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/normal/normal_left_motorcycle.png" width="320">
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="320">
+
+https://github.com/katsunori-waragai/disparity-view
 
 ## 検出結果の受け渡しの問題
 - モジュールを実装する言語によらない受け渡しの方法があること
   - 例：protobuf
 - 同一言語内では、その言語内で便利な受け渡し方法があってよい。
   - 例：dataclasses-json, pyserde
+
+
+## 最近の知見の共有
+- 深層学習・VisionTransformer の進展は、既存のタスクのフレームワークをどんどん置換えている。
+- arXivのpdfとともにgithub 上のレポジトリも公開されている。
+- これらの中には、Jetsonのような組み込みデバイスで動作可能なものもある。
+- 例：ステレオ計測はOpenCVのStereoSGBMだけじゃない。
+
+![](https://github.com/katsunori-waragai/libIGEVStereo/raw/main/doc/demo-imgs.png)
+https://github.com/katsunori-waragai/libIGEVStereo
+
 
 # 目次
 ## 第１章　設計の方針
@@ -57,6 +74,7 @@
 - [frames](3_0_frames)
 - [frames_depth](3_1_frames_depth.md)
 - [代表的なタスク](3_5_typical_task.md)
+- [ZED SDK (Stereolabs)でのサンプル](3_6_stereolabs_examples.md)
 ## 第４章　遅延時間とカメラ姿勢の問題
 [reducing latency and camera pose](4_reducing_latency.md)
 ## 第５章　スレッド処理
