@@ -128,6 +128,11 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
   - https://docs.omniverse.nvidia.com/isaacsim/latest/features/sensors_simulation/isaac_sim_sensors_camera.html
   - https://docs.omniverse.nvidia.com/materials-and-rendering/latest/cameras.html
 
+## jsonファイルでのカメラ情報
+[stereo_camera.json](stereo_camera.json)
+
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
 - [ステレオカメラ調査(2023年版）](https://qiita.com/nonbiri15/items/a8590a99941f8de4c8b8)
+- [ToFカメラについての重箱の隅](https://qiita.com/nonbiri15/items/064bbce3a2347f307119)
+- [ステレオカメラの重箱の隅](https://qiita.com/nonbiri15/items/e0889c135acd90ae1319)
