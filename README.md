@@ -39,6 +39,12 @@
 ## 表示方法の問題
 - アルゴリズムのモジュールにおいては、画像表示・点群表示・top viewの表示自体もライブラリ化した部分には含めない。
 - 理由：画像認識モジュールは、head less のシステムで利用されることが想定されるため。
+- 実装例：
+ 以下のような表示を作るためのモジュールのAPIを提供する。
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/normal/normal_left_motorcycle.png" width="320">
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="320">
+
+https://github.com/katsunori-waragai/disparity-view
 
 ## 検出結果の受け渡しの問題
 - モジュールを実装する言語によらない受け渡しの方法があること
