@@ -68,3 +68,6 @@ https://pypi.org/project/pclpy/
 [ZED SDK Getting Point Cloud Data #](https://www.stereolabs.com/docs/depth-sensing/using-depth#getting-point-cloud-data)
 
 
+## RealSense
+[RealSenseで点群を取得する方法](https://qiita.com/kakuteki/items/73d4fce886a99230a2d6)
+
