@@ -52,6 +52,17 @@ https://github.com/katsunori-waragai/disparity-view
 - 同一言語内では、その言語内で便利な受け渡し方法があってよい。
   - 例：dataclasses-json, pyserde
 
+
+## 最近の知見の共有
+- 深層学習・VisionTransformer の進展は、既存のタスクのフレームワークをどんどん置換えている。
+- arXivのpdfとともにgithub 上のレポジトリも公開されている。
+- これらの中には、Jetsonのような組み込みデバイスで動作可能なものもある。
+- 例：ステレオ計測はOpenCVのStereoSGBMだけじゃない。
+
+![](https://github.com/katsunori-waragai/libIGEVStereo/raw/main/doc/demo-imgs.png)
+https://github.com/katsunori-waragai/libIGEVStereo
+
+
 # 目次
 ## 第１章　設計の方針
 [design policy](1_0_design_policy)
