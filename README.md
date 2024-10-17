@@ -63,6 +63,7 @@ https://github.com/katsunori-waragai/disparity-view
 - [frames](3_0_frames)
 - [frames_depth](3_1_frames_depth.md)
 - [代表的なタスク](3_5_typical_task.md)
+- [ZED SDK (Stereolabs)でのサンプル](3_6_stereolabs_examples.md)
 ## 第４章　遅延時間とカメラ姿勢の問題
 [reducing latency and camera pose](4_reducing_latency.md)
 ## 第５章　スレッド処理

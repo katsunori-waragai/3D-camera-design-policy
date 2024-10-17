@@ -1,4 +1,11 @@
-# Examples in ZED SDK (Stereolabs)
+# ZED SDK (Stereolabs)でのサンプル
+
+実績のある3Dカメラでは、それらを使うサンプルスクリプトがあらかじめGithub上に公開している。
+ユースケースによっては、そのサンプルで足りる場合もあるだろう。
+それ以外の場合には、これらのサンプルを元に、改変すればいいだろう。
+- 例：yoloX, yolov9への変更
+- 例：顔検出・顔照合ライブラリの利用の追加実装、人物検出との紐付け
+
 copied from 
 https://github.com/stereolabs/zed-sdk
 
