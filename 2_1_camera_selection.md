@@ -136,3 +136,7 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 - [ステレオカメラ調査(2023年版）](https://qiita.com/nonbiri15/items/a8590a99941f8de4c8b8)
 - [ToFカメラについての重箱の隅](https://qiita.com/nonbiri15/items/064bbce3a2347f307119)
 - [ステレオカメラの重箱の隅](https://qiita.com/nonbiri15/items/e0889c135acd90ae1319)
+
+## カメラレビュー
+- [We compared 8 types of 3D cameras in various environments [No. XNUMX indoor edition]](https://www.tegakari.net/en/2020/09/3dcamera_compare_2/)
+- [Depth Accuracy Comparison: Luxonis OAK vs StereoLab™ ZED vs Intel® RealSense™](https://discuss.luxonis.com/blog/3734-depth-accuracy-comparison-luxonis-oak-vs-stereolab-zed-vs-intel-realsense)
