@@ -85,6 +85,10 @@ BlendedMVS-stereo: CC BY-NC 3.0 DEED (Non-commercial use)
 
 DeepL.com（無料版）で翻訳しました。
 
+[Depth Estimation from Monocular/Stereo Images](https://github.com/PINTO0309/PINTO_model_zoo/tree/main?tab=readme-ov-file#7-depth-estimation-from-monocularstereo-images)
+このサイトには、深度推定に関わる学習済みモデルが用意されている。
+
+
 ---
 - Github [Awesome-Deep-Stereo-Matching](https://github.com/fabiotosi92/Awesome-Deep-Stereo-Matching?tab=readme-ov-file#frameworks)
  A curated list of awesome Deep Stereo Matching resources
