@@ -75,7 +75,12 @@ SDKとサンプル実装によっては、検出結果を３Dに表示して、�
 ボードを自作しない範囲の人については、次の条件を満たすカメラを選択するとよい。
 
 - timestampを扱ってくれるカメラ
+  - そのデータは、いつのタイミングに取得したものですか。物体検出などが済んだ時点で、それは「今じゃなくて過去」です。それがどのくらい過去なのかを知るには、 timestampが必須です。
 - カメラにIMUがあって、画像に同期したタイミングでの姿勢データが得られること
+  - [ROS 2でRealSenseの内蔵IMUを使用する](https://qiita.com/porizou1/items/6ecc89d218502ad6fe68)
+  - [ZED SDK のセンサーデータ](https://qiita.com/nonbiri15/items/0d3d5e5084f7318e8c69)
+  - IMU内蔵の３Dカメラの取得する点群データは、カメラ座標系だけではなく、世界座標系で得られるタイプの3Dカメラがある。
+  - 世界座標系で得られる場合、対象物が何ｍ先にあるのかを知ることができる。
 - 落としてしまうなどの衝撃を加えても特性の変化が無視できること
 - 使用する温度範囲の中で、深度を算出する特性への変化がないこと
   - もしくは、キャリブレーションによって簡単に対処できること
@@ -140,3 +145,4 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## カメラレビュー
 - [We compared 8 types of 3D cameras in various environments [No. XNUMX indoor edition]](https://www.tegakari.net/en/2020/09/3dcamera_compare_2/)
 - [Depth Accuracy Comparison: Luxonis OAK vs StereoLab™ ZED vs Intel® RealSense™](https://discuss.luxonis.com/blog/3734-depth-accuracy-comparison-luxonis-oak-vs-stereolab-zed-vs-intel-realsense)
+- [ステレオカメラ業界を追放されし者のカメラレビュー（Gemini 335L）](https://qiita.com/Takumi3Dcamera/items/6d44e52c4a302da94de8)
