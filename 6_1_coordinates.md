@@ -14,6 +14,11 @@ https://pbs.twimg.com/media/GZAINdAbAAU09fW?format=jpg&name=small
 y：上から下
 Z:カメラから前方へ
 
+注：この向きがデフォルトになる理由
+画像での座標の扱いは
+画像上の横をｘ、画像上の縦方向をｙとしている。
+その画像上のｘ，ｙとの３次元空間でのx,yの向きが同じになるものがデフォルトとして選ばれている。
+
 InitParameters.coordinate_system の値を変更することで、
 ６通りの定義を切り替えることができる。
 
