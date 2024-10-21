@@ -6,6 +6,24 @@
 この文書は、３Dカメラのユーザーが、カメラ画像を取得する・深度を取得する・検出を実施するなどの処理を行う際に
 再利用が容易になるモジュールの設計を簡単にする指針を示すことを目標とする。
 
+## ソフトウェアのインタフェースのデザインを重視する理由
+- 3Dカメラの利用・画像認識：
+  - 複数の機能の連携が重要
+  - それぞれのタスク間の連携をしやすく
+  - タスクに対する実装の入れ替えはよく起こる
+  - データ構造の変換作業というオーバーヘッドを生じさせたくない。
+  - 3Dカメラ取得データの扱いを、3Dカメラの種類によらず簡単にしたい。
+  - センサデータのデータフローを単純化させたい。
+- そこそこにいい出発点が大事
+  - 3Dカメラ・各種画像認識について、最初からそこそこいい出発点に立てることが大切。
+  - 教科書のアルゴリズムよりもいい実装が存在する。
+  - 楽をできる部分を見つけて楽をする。
+- 数万、数十万人の開発者がいる時代に：
+  - いいものを使えることが大事。
+  - 論文ベースのSOTAであることより、ロバストであることが大事。
+  - いいものを自分が書くよりも、いいものを見極められることがまずは大事。
+  - それらよりも、いいものが作れる確信ができたら、実装しよう。
+
 ## 3D cameras
 - カメラの種類
   - Stereo Camera
@@ -66,10 +84,10 @@ https://github.com/katsunori-waragai/libIGEVStereo
 # 目次
 ## 第１章　設計の方針
 [design policy](1_0_design_policy)
-## 第２章　３Dカメラの選択
-[camera_selection](2_1_camera_selection)
-[board_selection](2_2_board_selection.md)
-[framework_selection](2_3_framework_selection.md)
+## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
+- [camera_selection](2_1_camera_selection)
+- [board_selection](2_2_board_selection.md)
+- [framework_selection](2_3_framework_selection.md)
 ## 第３章　フレームの扱いと代表的なタスク
 - [frames](3_0_frames)
 - [frames_depth](3_1_frames_depth.md)
@@ -82,8 +100,8 @@ https://github.com/katsunori-waragai/libIGEVStereo
 ## 第６章 ROS2
 [ROS2](6_ros2.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
-[usage_proposal](7_1_usage_proposal)
-[3D計測と画像認識の未来](7_5_future.md)
+- [usage_proposal](7_1_usage_proposal)
+- [3D計測と画像認識の未来](7_5_future.md)
 ## 第８章　試験的な実装
 - [exprimental](8_0_exprimental)
 - 開発 [development](8_1_development.md)

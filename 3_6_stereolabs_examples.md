@@ -10,6 +10,8 @@ copied from
 https://github.com/stereolabs/zed-sdk
 
 - ./body tracking/body tracking/python
+[Intel(R) RealSense(TM) ROS person detection and tracking](https://github.com/kevincwells/realsense_person)
+
 - ./body tracking/export/JSON export/python
 - ./body tracking/multi-camera/python
 - ./camera control/python
@@ -25,7 +27,11 @@ https://github.com/stereolabs/zed-sdk
 - ./object detection/concurrent detections/python
 - ./object detection/custom detector/python
 - ./object detection/custom detector/python/pytorch_yolov5
+
+[RealSense Depth Sensing Object Detection with YOLOv5](https://github.com/Paulraj916/RealSense-Depth-Sensing-Object-Detection-with-YOLOv5)
 - ./object detection/custom detector/python/pytorch_yolov8
+[RealSenseセンサとYOLO7を用いた物体認識](https://zak-science-labs.com/2024/07/05/realsense%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%A8yolo%E3%82%92%E7%94%A8%E3%81%84%E3%81%A6%E7%89%A9%E4%BD%93%E8%AA%8D%E8%AD%98/)
+
 - ./object detection/image viewer/python
 - ./plane detection/plane detection/python
 - ./positional tracking/positional tracking/python
@@ -35,6 +41,9 @@ https://github.com/stereolabs/zed-sdk
 - ./recording/playback/mono/python
 - ./recording/recording/external_data/python
 - ./recording/recording/mono/python
+対応するRealSenseの例
+- https://github.com/IntelRealSense/librealsense/tree/master/examples/capture
+
 - ./spatial mapping/spatial mapping/python
 - ./tutorials/tutorial 1 - hello ZED/python
 - ./tutorials/tutorial 2 - image capture/python
