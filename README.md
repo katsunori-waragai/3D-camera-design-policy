@@ -98,7 +98,8 @@ https://github.com/katsunori-waragai/libIGEVStereo
 ## 第５章　スレッド処理
 [スレッド処理](5_threads.md)
 ## 第６章 ROS2
-[ROS2](6_0_ros2)
+- [ROS2](6_0_ros2)
+- [6_1_coordinates.md](6_1_coordinates.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
 - [usage_proposal](7_1_usage_proposal)
 - [3D計測と画像認識の未来](7_5_future.md)
