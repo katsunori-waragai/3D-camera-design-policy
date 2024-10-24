@@ -43,6 +43,11 @@ Neural Network Console クラウド版は2024年12月25日をもってサービ�
 HailoModelZoo/docs/GETTING_STARTED.rst
 https://github.com/hailo-ai/hailo_model_zoo/blob/master/docs/GETTING_STARTED.rst
 
+
+[ﾗｽﾞﾊﾟｲ5・RealSense・Hailo-8でセグメンテーションタスク推論中の消費電力：7.5W
+すごく省電力](https://x.com/Ray255Ar/status/1798686519571669354)
+
+
 ### Coral USB Accelerator
 [Coral USB Accelerator](https://coral.ai/products/accelerator/)
 

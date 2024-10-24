@@ -218,7 +218,7 @@ for name, estimator in ESTIMATORS.items():
     disparity_calculator = stereosgbm.DisparityCalculator(
         window_size=window_size, min_disp=min_disp, max_disp=max_disp
     )
-	disparity = disparity_calculator.predict_by_bgr(left.copy(), right.copy())
+	disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
 別なステレオ計測での実行例の１部では、次のようになる。
@@ -229,6 +229,10 @@ for name, estimator in ESTIMATORS.items():
       disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
+- どちらの場合も同じライブラリを用いて、
+  - 視差画像の可視化ができる
+  - 点群への変換ができる
+  - 再投影画像を作れる
 
 ## class ベースの設計
 設計の例
@@ -296,6 +300,30 @@ cv_img = image.get_data()
 TensorFlowのTensor型ではデータは、CPU、GPUのどちらにも置ける。
 しかし、大半の画像データ形式は、CPU上に限られる。
 
+
+## 点群データの扱い
+- 手法１：3DカメラのSDK依存のデータ構造とライブラリ
+  - この場合だと3DカメラのSDKの種類ごとに、異なるデータ形式になる。
+- 手法２：Open3D のデータ構造とライブラリ
+　- Open3Dの場合、それぞれのデータが明示的に型設定されている。
+　- そのため、定型的な操作は実装済みの関数・メソッドの呼び出しとなる。
+　- 引数がどの型なのかによって、変数の意味が明解になる。
+- 手法３：OpenCVやnumpyの範囲のデータ構造とライブラリ
+  - OpenCVでは３次元のデータとしてむき出しのデータ構造になっている。
+　- 線形代数を扱うにはちょうどよい。
+　- 引数のデータの型がnp.ndarray 型になんでもなってしまうので、変数の意味合いがわかりにくい。
+　- OpenCVそれ自体には３次元データを扱うための関数群が不足している。
+　- そのため、Open3Dならば用意されている機能を各自が実装してしまう。
+- 手法４：Unityなどの３Dのゲームエンジン
+  - 3DカメラのSDKを利用して、点群データを取り込む
+
+#### 点群データの扱いに対する私見
+- OpenCVを使うよりは、Open3Dを使うほうがのぞましい
+  - 理由：
+  - OpenCVベースの自作ライブラリは負債になる。
+  - 可読性が低い。間違えた使い方を見つけにくい。
+  - 並列演算のプラットフォーム対応を、利用するライブラリのコミュニティに委ねたい。
+  - たとえ１行で書ける関数であっても、テストなしの自作関数はバグの温床になる。
 
 ## test
 ロボットに使われる画像計測・画像認識についてトレース可能なテストがほしい。
