@@ -12,6 +12,8 @@
 　おまけの機能として、ZED2iカメラからのステレオ画像の保存ツールを同梱。
 ### https://github.com/katsunori-waragai/libIGEVStereo
 　ステレオ計測アルゴリズムの１例を、モジュールとしてインストール可能なように改変したもの。
+  IGEVは近年のステレオライブラリの１つ。
+　細い領域に対しても視差の計算ができるようになってきている。
 　保存した結果は、上述のviewer によって可視化できる。
 
 ### https://github.com/katsunori-waragai/libstereosgbm
