@@ -47,6 +47,31 @@
 SDKとサンプル実装によっては、検出結果を３Dに表示して、追跡をするなどの例がある。
 それらのSDKの充実度合いも、カメラを選択する際の考慮対象になる。
 
+### 3D Cameraの使えるボードコンピュータ、OSには制約がある。
+ほとんどの３Dカメラの場合、接続できるボードコンピュータ、OSには制約がある。
+#### ZED SDK(StereoLabs)
+- [x] Windows 10/11
+- [x] Ubuntu 20/22/24
+いずれもCUDAデバイスがあること。
+対象外
+- macOS
+- AndroidOS
+
+
+#### Intel RealSense
+[Intel RealSense SDK 2.0](https://www.intelrealsense.com/sdk-2/) はサポートしているプラットフォームが広い。
+- [x] Windows
+- [x] Linux
+- [x] AndroidOS
+- [x] MacOS
+
+#### Orbbec
+[Orbbec SDK](https://www.orbbec.com/developers/orbbec-sdk/)
+- [x] Windows
+- [x] Linux
+- [x] AndroidOS
+- [x] MacOS
+
 ## digital twin
 ロボットの動作を、シミュレーションによる強化学習を実施することが増えている。
 それを実行するためには、シミュレーション空間上で、対象物の位置と姿勢を取得する必要がある。
