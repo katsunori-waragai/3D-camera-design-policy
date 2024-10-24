@@ -13,3 +13,7 @@
 [NVIDIA Vision Programming Interface (VPI)入門 Python API編](https://qiita.com/dandelion1124/items/9b6a33b97f088f3fb205)
 
 このようなインタフェースも考察に加えたい。
+
+## python coding style
+- 多くの引数を持つ場合には、キーワード引数で指定する。順序引数にすると間違いを生じる。
+- 

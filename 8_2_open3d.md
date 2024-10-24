@@ -36,6 +36,19 @@ https://github.com/IntelRealSense/librealsense/blob/master/wrappers/open3d/readm
 
 [Open3D with CUDA](https://zenn.dev/yutashx/scraps/577ae6230ebb82)
 
+## Open3D とOpenCV との比較
+
+### カメラの内部パラメータ
+[open3d.camera.PinholeCameraIntrinsic](https://www.open3d.org/docs/latest/python_api/open3d.camera.PinholeCameraIntrinsic.html)
+o3d.camera.PinholeCameraIntrinsic(width=width, height=height, fx=fx, fy=fy, cx=cx, cy=cy)
+
+OpenCVで用いるカメラ行列
+camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
+
+[open3d.geometry.Image](https://www.open3d.org/html/python_api/open3d.geometry.Image.html)
+
+
+
 ## OpenGL
 Open3DはOpenGLを内部で利用している。
 OpenGLの記述能力は細かい部分まで可能であるが、ライブラリを使いこなすのがむずかしい。

@@ -182,6 +182,20 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## jsonファイルでのカメラ情報
 [stereo_camera.json](stereo_camera.json)
 
+
+## SDKがしょぼくてもなんとかするという猛者の場合
+- まず、どういう方式で通信するのかを確かめてくれ。
+- CPUボード側に、どういうコネクタインタフェースがあればいいのか確認する。
+  - CPUボード側からどのように電源供給するのか
+  - 制御信号はどうなっているのか。
+  - レジスタマップなども必要になるはずだ。
+- デバイスドライバをどう書くのかを調べてくれ。
+- 画像サイズとfps、遅延などがどうなるのかを確認してくれ。
+- カメラパラメータの算出方法をなどを調べて、確かめてくれ。
+- どういう条件で精度が劣化しやすいか考え、ハードウェアの対策をとってくれ。
+- 独自のSDKを作って拡張する場合には、よく使われている3Dカメラの機能を参考にAPIを設計するといいだろう。
+- 
+
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
 - [ステレオカメラ調査(2023年版）](https://qiita.com/nonbiri15/items/a8590a99941f8de4c8b8)
@@ -193,3 +207,5 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 - [Depth Accuracy Comparison: Luxonis OAK vs StereoLab™ ZED vs Intel® RealSense™](https://discuss.luxonis.com/blog/3734-depth-accuracy-comparison-luxonis-oak-vs-stereolab-zed-vs-intel-realsense)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Gemini 335L）](https://qiita.com/Takumi3Dcamera/items/6d44e52c4a302da94de8)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Femto Bolt ）](https://qiita.com/Takumi3Dcamera/items/45feb1f2ee1ddeb22991)
+- [A Quick Comparison of the Orbbec and RealSense 3D Cameras](https://opencv.org/blog/a-quick-comparison-of-the-orbbec-and-realsense-3d-cameras/)
+
