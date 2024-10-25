@@ -205,6 +205,8 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## カメラレビュー
 - [We compared 8 types of 3D cameras in various environments [No. XNUMX indoor edition]](https://www.tegakari.net/en/2020/09/3dcamera_compare_2/)
 - [Depth Accuracy Comparison: Luxonis OAK vs StereoLab™ ZED vs Intel® RealSense™](https://discuss.luxonis.com/blog/3734-depth-accuracy-comparison-luxonis-oak-vs-stereolab-zed-vs-intel-realsense)
+- [3Dカメラ 8種類を 様々な環境で比較しました 【その① 屋外編】](https://www.tegakari.net/2020/09/3dcamera_compare_1/)
+- [3Dカメラ 8種類を 様々な環境で比較しました 【その② 屋内編】](https://www.tegakari.net/2020/09/3dcamera_compare_2/)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Gemini 335L）](https://qiita.com/Takumi3Dcamera/items/6d44e52c4a302da94de8)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Femto Bolt ）](https://qiita.com/Takumi3Dcamera/items/45feb1f2ee1ddeb22991)
 - [A Quick Comparison of the Orbbec and RealSense 3D Cameras](https://opencv.org/blog/a-quick-comparison-of-the-orbbec-and-realsense-3d-cameras/)
