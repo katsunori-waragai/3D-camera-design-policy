@@ -1,8 +1,22 @@
 # この構想の目的
-- 3Dカメラの利用と、画像認識・３D再構築・機械学習などを扱いやすくする設計方針を示すこと
-- アルゴリズムの置き換えを簡単にしていくこと
-- ３Dカメラそれ自体についてのインタフェースについて、SDKごとの差異をわかりやすくする。
-- 可能ならば、それらが類似のインタフェースによってデータの取得できること。
+ 3Dカメラの利用と、画像認識・３D再構築・機械学習などを扱いやすくする設計方針を示すこと
+1. 視差画像・深度画像などの3D再構築関係の表示方法の例を提供する。
+2. ステレオ計算の各種アルゴリズムの結果を上記の表示ツールと組合せやすいインタフェース設計案を示すこと
+   - アルゴリズムの置き換えを簡単にしていくこと
+3. 3Dカメラの方式の違いと、3Dカメラの典型例を紹介しつつ、3Dカメラの選択のヒントを与えること
+   - ３Dカメラそれ自体についてのインタフェースについて、SDKごとの差異をわかりやすくする。
+   - 可能ならば、それらが類似のインタフェースによってデータの取得できること。
+4. ステレオ計測の初心者によい取っ掛かりを提供すること
+5. 3Dカメラと画像認識・画像を利用する大規模言語モデルとの連携をしやすくすること
+  - 3DカメラのSDKの例にある画像認識との連携例を紹介する。
+## サンプル実装
+- ステレオカメラの視差画像の可視化のためのライブラリを提供すること
+  - 実装：[disparity-view](https://github.com/katsunori-waragai/disparity-view)
+- ステレオカメラ画像からの視差算出アルゴリズムの実行のためのライブラリ化のためのAPIの例を提供すること。
+  - 実装：
+  - [libIGEVStereo](https://github.com/katsunori-waragai/libIGEVStereo)
+  - [libstereosgbm](https://github.com/katsunori-waragai/libstereosgbm)
+
 
 ## 参考事例
 scikit-learn
@@ -248,6 +262,12 @@ for name, estimator in ESTIMATORS.items():
 <img src="https://github.com/katsunori-waragai/libstereosgbm/blob/main/test/test-imgs/disparity/disparity_motorcycle.png" width="640">
 <img src="https://github.com/katsunori-waragai/disparity-view/blob/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="640">
 
+##### 再投影画像の有用性
+- 視差（もしくは深度）をcolormap で表示するだけでは、ステレオ計算の結果の妥当性について目視レベルのチェックをするには不十分過ぎる。
+- 点群に変換したあとに、視点の位置と向きを変えた再投影画像は、目視レベルのチェックを楽にする。
+- また、法線ベクトルの向きに応じた色表示は、表面の状況を理解しやすくするものだ。
+- 
+
 ## class ベースの設計
 設計の例
 - インスタンスを生成する際に、最小限の設定をすれば、動作すること
@@ -312,6 +332,9 @@ cv_img = image.get_data()
 
 #### GPU上にその画像データはおけるのか
 TensorFlowのTensor型ではデータは、CPU、GPUのどちらにも置ける。
+Open3DのデータもCPU、GPUのどちらにも置ける。
+画像データを一貫してGPU上に置ける場合には、GPU-CPU間のデータ転送が不要になる。
+
 しかし、大半の画像データ形式は、CPU上に限られる。
 
 
