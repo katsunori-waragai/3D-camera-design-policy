@@ -95,6 +95,10 @@ SDKとサンプル実装によっては、検出結果を３Dに表示して、�
 - ハイダイナミックレンジ(HDR)
 - 高感度・低ノイズ
 - LEDフリッカー抑制
+### 単眼カメラでの好ましい特性のカメラ
+Tier IV C1 Camera
+[自動運転&モビリティ向け車載HDRカメラ](https://www.paltek.co.jp/solution/tier4/index.html)
+
 
 ## 複数台の3Dカメラ
 - 用途においては、一つのシステムの中に複数台の3Dカメラが入ってくる。
@@ -102,6 +106,15 @@ SDKとサンプル実装によっては、検出結果を３Dに表示して、�
 - [ ] システムは、その複数台の3Dカメラをシリアル番号などで区別できますか。
 - [ ] その3Dカメラは、複数台で干渉しませんか。あるToFカメラの照射光による反射を別なToFカメラで受光して、結果がおかしくなるなんてことはありませんか。
 - [ ] 自律走行台車のような分野で、360度をカバーするには、何台の3Dカメラを必要としますか。
+
+### 複数台3Dカメラの利用例
+- StereoLabs
+  - https://www.stereolabs.com/en-jp/our-technology
+  - https://www.stereolabs.com/en-jp/products/zed-box
+- RealSense
+  - [Multi-Camera configurations - D400 Series Stereo Cameras](https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration)
+- Orbbec
+  - [Multi-Camera Sync Hub Dev/Pro ](https://www.orbbec.com/staging/wp-content/uploads/2023/08/ORBBEC_Datasheet_Multi-Camera-Sync-Hub-0816-v01.pdf) 
 
 
 ## selection by end user
