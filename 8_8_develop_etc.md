@@ -17,3 +17,11 @@
 ## python coding style
 - 多くの引数を持つ場合には、キーワード引数で指定する。順序引数にすると間違いを生じる。
 - 
+
+
+## 画像の保存
+- [0, 1]のfloat画像を保存するには、skimaie.io.imsave() を使おう。
+- [0, 1]のfloat画像をuint8 にするには、skimage.img_as_ubyte()を使おう。
+
+## ユニコード文字列を画像に書き加えるには
+- PIL.Image (pillow)を使おう。

@@ -5,7 +5,7 @@
 ### https://github.com/katsunori-waragai/disparity-view
  視差データをnpyファイルで保存してあるのを可視化するツール。
  - 視差データをcolormapで表示
- - colomapの視差データと左画像との重ね書き
+ - colormapの視差データと左画像との重ね書き
  - 法線ベクトルの向きによる色分け
  - 点群データからの再投影
  - 点群データのplyファイルへの保存

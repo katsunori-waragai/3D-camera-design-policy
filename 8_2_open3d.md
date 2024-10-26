@@ -3,9 +3,11 @@
 ### 利用性の高い機能
 - ３Dデータを扱うためのデータ形式
 - 視差データを深度データに変換する。
+- example
 - 深度データを点群データにする。
 - 点群データの座標変換を実施する
 - 視点を設定して点群データを２次元画像に射影する。
+- https://github.com/isl-org/Open3D/blob/main/examples/python/geometry/point_cloud_to_rgbd.py
 
 ### 組込時には使わない、開発時に利用する機能
 - 結果の表示機能
@@ -36,9 +38,12 @@ https://github.com/IntelRealSense/librealsense/blob/master/wrappers/open3d/readm
 
 [Open3D with CUDA](https://zenn.dev/yutashx/scraps/577ae6230ebb82)
 
-## Open3D とOpenCV との比較
 
-### カメラの内部パラメータ
+## Open3Dをのぞましいと私が考えている理由
+- 画像データ・点群データ処理を行うバックエンド側のライブラリを、ユーザーはいじる必要がない。
+- 画像データ・点群データの表示に関わる部分のバックエンド側のライブラリを、ユーザーはいじる必要がない。
+
+### カメラの内部パラメータ open3d.camera.PinholeCameraIntrinsic
 [open3d.camera.PinholeCameraIntrinsic](https://www.open3d.org/docs/latest/python_api/open3d.camera.PinholeCameraIntrinsic.html)
 o3d.camera.PinholeCameraIntrinsic(width=width, height=height, fx=fx, fy=fy, cx=cx, cy=cy)
 
@@ -49,10 +54,20 @@ camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 
 
 
+## OpenCVとOpen3Dとの比較
+- Open3Dでは、それぞれの変数がそれぞれの型を持っている。そのため、Open3Dを使っている範囲では、不適切な型の変数を引数に与えるとエラーになる。
+- type hintを見た時点で、変数の意味が明確になりやすい。
+  - OpenCVなど、ほとんどの変数がnp.ndarray型、もしくはcv::Mat型になってしまう。
+- Open3Dの関数を用いて実装すると、だれが書いても似たようなコードになりやすい。
+- Open3Dと名乗るだけあって、3Dのデータを扱うためのライブラリが充実している。OpenCVでは、ライブラリに多くの機能が不足しているので、視差を深度に換算するのさえ、自作のコードを必要としてしまう。
+
 ## OpenGL
 Open3DはOpenGLを内部で利用している。
 OpenGLの記述能力は細かい部分まで可能であるが、ライブラリを使いこなすのがむずかしい。
 Open3Dから表示させた方が、表示が楽だろう。
+### 付記： OpenGLでの記述例
+- ZED SDK(StereoLabs)のサンプルコードは、3DのグラフィックにOpenGLを用いている。
+- 画層認識・画像計測・それらの利用（ロボットの開発など）をしている人が、こういったコードを書くのに時間をさくのは難しいだろう。
 
 ## Point Cloud Library
 https://pointclouds.org/
