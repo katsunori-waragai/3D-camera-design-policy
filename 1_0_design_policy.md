@@ -105,6 +105,9 @@ for name, estimator in ESTIMATORS.items():
   - 共通の表示ツールを使えるようになれば、特性の差を比較しやすくなる。
 - ある3DカメラのSDKのサンプルプログラムが有用でしかもOSSのライセンスであることがある。
   - そのよいアイディアを、別のカメラでも使いたい。
+- 3D分野の初心者にとってよい初期値を与えること
+  - 3D分野の初心者が利用するだろうステレオ計測の実装はOpenCVのものだろう。
+  - しかし、OpenCVのステレオ計測は、2020年代の今となってはあまりにも古い実装になっている。
 
 #### 3Dカメラと画像認識との統合は、新しい産業の基盤となる
 - 機械学習が、従来はファイルに変換済みのデータに対するもので、身体性をあまり持たないものが中心だった。
@@ -126,6 +129,12 @@ for name, estimator in ESTIMATORS.items():
     - 例：機械学習結果を利用して機械学習を改善するループが回りだしていること
   - カメラと自律マシンとの間で、外界についての「理解」を可能にしてきていること
   - 今回のAIの開発では、コミュニティの規模が大きくなっていることによる加速が生じていること
+
+##### 国内の動向への危惧
+- 今回の技術の進展に対する、産業界の対応が乏しいこと
+- 3Dカメラそれ自体、大規模言語モデルの画像認識AIへの影響、３Dとの組合せによる産業への影響
+- 技術の進展をトレースするのさえ追いついていない。
+- 
 
 ## 公開されることで開発が加速される。
 #### コミュニティの規模が開発を加速させる。
@@ -233,6 +242,11 @@ for name, estimator in ESTIMATORS.items():
   - 視差画像の可視化ができる
   - 点群への変換ができる
   - 再投影画像を作れる
+
+#### 実行結果の例
+
+<img src="https://github.com/katsunori-waragai/libstereosgbm/blob/main/test/test-imgs/disparity/disparity_motorcycle.png" width="640">
+<img src="https://github.com/katsunori-waragai/disparity-view/blob/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="640">
 
 ## class ベースの設計
 設計の例
