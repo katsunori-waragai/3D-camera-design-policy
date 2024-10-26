@@ -95,6 +95,27 @@ SDKとサンプル実装によっては、検出結果を３Dに表示して、�
 - ハイダイナミックレンジ(HDR)
 - 高感度・低ノイズ
 - LEDフリッカー抑制
+### 単眼カメラでの好ましい特性のカメラ
+Tier IV C1 Camera
+[自動運転&モビリティ向け車載HDRカメラ](https://www.paltek.co.jp/solution/tier4/index.html)
+
+
+## 複数台の3Dカメラ
+- 用途においては、一つのシステムの中に複数台の3Dカメラが入ってくる。
+- [ ] システムは、その複数台の3Dカメラを接続できますか。帯域が足りてますか、電源が足りますか。
+- [ ] システムは、その複数台の3Dカメラをシリアル番号などで区別できますか。
+- [ ] その3Dカメラは、複数台で干渉しませんか。あるToFカメラの照射光による反射を別なToFカメラで受光して、結果がおかしくなるなんてことはありませんか。
+- [ ] 自律走行台車のような分野で、360度をカバーするには、何台の3Dカメラを必要としますか。
+
+### 複数台3Dカメラの利用例
+- StereoLabs
+  - https://www.stereolabs.com/en-jp/our-technology
+  - https://www.stereolabs.com/en-jp/products/zed-box
+- RealSense
+  - [Multi-Camera configurations - D400 Series Stereo Cameras](https://dev.intelrealsense.com/docs/multiple-depth-cameras-configuration)
+- Orbbec
+  - [Multi-Camera Sync Hub Dev/Pro ](https://www.orbbec.com/staging/wp-content/uploads/2023/08/ORBBEC_Datasheet_Multi-Camera-Sync-Hub-0816-v01.pdf) 
+
 
 ## selection by end user
 ボードを自作しない範囲の人については、次の条件を満たすカメラを選択するとよい。
@@ -182,6 +203,20 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## jsonファイルでのカメラ情報
 [stereo_camera.json](stereo_camera.json)
 
+
+## SDKがしょぼくてもなんとかするという猛者の場合
+- まず、どういう方式で通信するのかを確かめてくれ。
+- CPUボード側に、どういうコネクタインタフェースがあればいいのか確認する。
+  - CPUボード側からどのように電源供給するのか
+  - 制御信号はどうなっているのか。
+  - レジスタマップなども必要になるはずだ。
+- デバイスドライバをどう書くのかを調べてくれ。
+- 画像サイズとfps、遅延などがどうなるのかを確認してくれ。
+- カメラパラメータの算出方法をなどを調べて、確かめてくれ。
+- どういう条件で精度が劣化しやすいか考え、ハードウェアの対策をとってくれ。
+- 独自のSDKを作って拡張する場合には、よく使われている3Dカメラの機能を参考にAPIを設計するといいだろう。
+- 
+
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
 - [ステレオカメラ調査(2023年版）](https://qiita.com/nonbiri15/items/a8590a99941f8de4c8b8)
@@ -191,5 +226,9 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
 ## カメラレビュー
 - [We compared 8 types of 3D cameras in various environments [No. XNUMX indoor edition]](https://www.tegakari.net/en/2020/09/3dcamera_compare_2/)
 - [Depth Accuracy Comparison: Luxonis OAK vs StereoLab™ ZED vs Intel® RealSense™](https://discuss.luxonis.com/blog/3734-depth-accuracy-comparison-luxonis-oak-vs-stereolab-zed-vs-intel-realsense)
+- [3Dカメラ 8種類を 様々な環境で比較しました 【その① 屋外編】](https://www.tegakari.net/2020/09/3dcamera_compare_1/)
+- [3Dカメラ 8種類を 様々な環境で比較しました 【その② 屋内編】](https://www.tegakari.net/2020/09/3dcamera_compare_2/)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Gemini 335L）](https://qiita.com/Takumi3Dcamera/items/6d44e52c4a302da94de8)
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Femto Bolt ）](https://qiita.com/Takumi3Dcamera/items/45feb1f2ee1ddeb22991)
+- [A Quick Comparison of the Orbbec and RealSense 3D Cameras](https://opencv.org/blog/a-quick-comparison-of-the-orbbec-and-realsense-3d-cameras/)
+

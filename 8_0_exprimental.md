@@ -4,9 +4,16 @@
 
 ### https://github.com/katsunori-waragai/disparity-view
  視差データをnpyファイルで保存してあるのを可視化するツール。
+ - 視差データをcolormapで表示
+ - colormapの視差データと左画像との重ね書き
+ - 法線ベクトルの向きによる色分け
+ - 点群データからの再投影
+ - 点群データのplyファイルへの保存
 　おまけの機能として、ZED2iカメラからのステレオ画像の保存ツールを同梱。
 ### https://github.com/katsunori-waragai/libIGEVStereo
 　ステレオ計測アルゴリズムの１例を、モジュールとしてインストール可能なように改変したもの。
+  IGEVは近年のステレオライブラリの１つ。
+　細い領域に対しても視差の計算ができるようになってきている。
 　保存した結果は、上述のviewer によって可視化できる。
 
 ### https://github.com/katsunori-waragai/libstereosgbm
