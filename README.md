@@ -114,6 +114,10 @@ https://github.com/katsunori-waragai/libIGEVStereo
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
 
+## Appendix
+- [参考事例: scikit-learn](appendix_1.md)
+
+
 ## あなたにできること
 - このプロジェクトのドキュメントを自由に展開してください。
 - このプロジェクトで紹介するOSSの実装を自由にご利用ください。

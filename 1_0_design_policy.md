@@ -12,6 +12,7 @@
 5. 3Dカメラと画像認識・画像を利用する大規模言語モデルとの連携をしやすくすること
   - 3DカメラのSDKの例にある画像認識との連携例を紹介する。
   - 3DカメラのSDKで取得した点群データと、OSSの画像認識（例：物体検出）との組合せ方の例を示すこと
+
 ## サンプル実装
 - ステレオカメラの視差画像の可視化のためのライブラリを提供すること
   - 実装：[disparity-view](https://github.com/katsunori-waragai/disparity-view)
@@ -20,95 +21,28 @@
   - [libIGEVStereo](https://github.com/katsunori-waragai/libIGEVStereo)
   - [libstereosgbm](https://github.com/katsunori-waragai/libstereosgbm)
 
-
-## 参考事例
-scikit-learn
-
-scikit-learnでは、学習アルゴリズムが異なってもfit(), predict()
-という共通の名前をメソッドに使っていることで、
-アルゴリズムを差し替えを簡単にしている。
+## サンプル実装の利用例
 
 ```.py:
-from sklearn import svm
-X = [[0, 0], [1, 1]]
-y = [0, 1]
-clf = svm.SVC()
-clf.fit(X, y)
-clf.predict([[2., 2.]])
+    disparity_calculator = stereosgbm.DisparityCalculator(
+        window_size=window_size, min_disp=min_disp, max_disp=max_disp
+    )
+	disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
-
-RandomForestClassifierの場合
-
+別なステレオ計測での実行例の１部では、次のようになる。
+どちらでも、似たコードになる。
+アルゴリズムの違いによる設定パラメータの違いは、インスタンスを作成する際のパラメータの違いとして吸収される。
 ```.py:
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
-X, y = make_classification(n_samples=1000, n_features=4,
-                           n_informative=2, n_redundant=0,
-                           random_state=0, shuffle=False)
-clf = RandomForestClassifier(max_depth=2, random_state=0)
-clf.fit(X, y)
-clf.predict(X)
+      disparity_calculator = stereoigev.DisparityCalculator(args=args)
+      disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
-どちらの実装の利用においても
-```commandline
-clf.fit(X, y)
-clf.predict(X)
-```
+- どちらの場合も同じライブラリを用いて、
+  - 視差画像の可視化ができる
+  - 点群への変換ができる
+  - 再投影画像を作れる
 
-部分は共通である。
-このため、分類器　Classifierの実装が置換えやすいインタフェースになっている。
-
-混同行列(confusion marix)を計算して、どういう誤分類を生じているのかをテーブルにまとめるのは
-共通の方法で対処できる。
-
-[sklearn.metrics.confusion_matrix(y_true, y_pred, *, labels=None, sample_weight=None, normalize=None)]
-(https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix)
-
-```.py:
->>> from sklearn.metrics import confusion_matrix
->>> y_true = [2, 0, 2, 2, 0, 1]
->>> y_pred = [0, 0, 2, 2, 0, 2]
->>> confusion_matrix(y_true, y_pred)
-array([[2, 0, 0],
-       [0, 0, 1],
-       [1, 0, 2]])
-```
-
-このような共通のインタフェース設計が、機械学習のライブラリを利用しやすくした。
-
-共通のインタフェースの利点は、以下のようなコードで、4種類のアルゴリズムに対して、
-fit(), predict()が共通なことが効いている。
-
-```.py:
-# Fit estimators
-ESTIMATORS = {
-    "Extra trees": ExtraTreesRegressor(
-        n_estimators=10, max_features=32, random_state=0
-    ),
-    "K-nn": KNeighborsRegressor(),
-    "Linear regression": LinearRegression(),
-    "Ridge": RidgeCV(),
-}
-
-y_test_predict = dict()
-for name, estimator in ESTIMATORS.items():
-    estimator.fit(X_train, y_train)
-    y_test_predict[name] = estimator.predict(X_test)
-```
-
-[引用元のスクリプト](https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_multioutput_face_completion.html#sphx-glr-auto-examples-miscellaneous-plot-multioutput-face-completion-py)
-
-![](https://scikit-learn.org/stable/_images/sphx_glr_plot_multioutput_face_completion_001.png)
-スクリプトの実行結果
-このデモスクリプトは、顔の上半分を与えたら、顔の下半分を予測させるモデルの学習後の予測の結果だ。
-顔の特徴は、上半分と下半分で無関係なわけがない。顔が丸顔だったら、上半分と下半分で共通だろし、年齢や性別の影響も上半分と下半分で共通に現れると期待される。
-だから、上半分の顔画像を与えたときに、下半分の顔を予想させようという取り組みが可能になる。
-使用した手法によっては、それらしい結果を与えている。
-（生成AIを用いた状況では、これらよりも良い推論を得られるだろう。）
-
-このようにアルゴリズムが異なっても同一のインタフェースを持つことの利点は大きい。
 
 ## この宣言がめざすこと
 - タスクへの入出力が同じアルゴリズムであれば、アルゴリズムの種類が変わっても、同一のインタフェース設計でコードを書ける。
@@ -238,27 +172,6 @@ for name, estimator in ESTIMATORS.items():
   - 実装例：モジュールじたいの中では,カメラのインスタンスを生成しない。mainの中でカメラのインスタンスを生成する。
   - 理由：１つのカメラに接続できるのは、１つのアプリケーションだけである。
 
-## 実装の利用例
-
-```.py:
-    disparity_calculator = stereosgbm.DisparityCalculator(
-        window_size=window_size, min_disp=min_disp, max_disp=max_disp
-    )
-	disparity = disparity_calculator.predict(left.copy(), right.copy())
-```
-
-別なステレオ計測での実行例の１部では、次のようになる。
-どちらでも、似たコードになる。
-アルゴリズムの違いによる設定パラメータの違いは、インスタンスを作成する際のパラメータの違いとして吸収される。
-```.py:
-      disparity_calculator = stereoigev.DisparityCalculator(args=args)
-      disparity = disparity_calculator.predict(left.copy(), right.copy())
-```
-
-- どちらの場合も同じライブラリを用いて、
-  - 視差画像の可視化ができる
-  - 点群への変換ができる
-  - 再投影画像を作れる
 
 #### 実行結果の例
 
