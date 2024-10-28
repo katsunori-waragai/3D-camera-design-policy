@@ -61,7 +61,8 @@
  以下のような表示を作るためのモジュールのAPIを提供する。
 <img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/normal/normal_left_motorcycle.png" width="320">
 <img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="320">
-
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/overlay/overlay_left_motorcycle.png" width="320">
+<img src="https://github.com/katsunori-waragai/disparity-view/raw/main/test/test-imgs/gif/reproject_left_motorcycle.gif">
 https://github.com/katsunori-waragai/disparity-view
 
 ## 検出結果の受け渡しの問題

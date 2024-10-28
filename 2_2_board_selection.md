@@ -17,6 +17,11 @@ raspberry pi 5
 ##### raspberry pi 5+「Raspberry Pi AI Kit」
 [ラズパイ5にAIキットが登場、処理性能は13TOPS](https://monoist.itmedia.co.jp/mn/articles/2406/05/news086.html)
 
+[Raspberry Pi AI HAT+（26TOPS版）](https://www.switch-science.com/products/9999?srsltid=AfmBOopiZbk5tXGoCWj10eUNKbUeegZq9smK_GoK_DjphtTRUAyFLrsJ)
+> Hailo 8 AIアクセラレーターを搭載したRaspberry Pi 5用のHAT+です。Raspberry Pi 5（4 GB / 8 GB）上で優れた推論性能（最大26 TOPS）を発揮させることができます。13 TOPSの廉価版も取り扱いがあります。
+
+
+
 ### Qualcomm
 [Qualcomm Neural Processing SDK for AI](https://www.qualcomm.com/developer/software/neural-processing-sdk-for-ai)
 
@@ -47,6 +52,8 @@ https://github.com/hailo-ai/hailo_model_zoo/blob/master/docs/GETTING_STARTED.rst
 [ﾗｽﾞﾊﾟｲ5・RealSense・Hailo-8でセグメンテーションタスク推論中の消費電力：7.5W
 すごく省電力](https://x.com/Ray255Ar/status/1798686519571669354)
 
+
+Hailo-8 がRaspberry Pi AI HAT　として利用可能になっているので、RaspberryPI 5と組合で利用するのがいいだろう。
 
 ### Coral USB Accelerator
 [Coral USB Accelerator](https://coral.ai/products/accelerator/)
