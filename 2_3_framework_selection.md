@@ -54,6 +54,8 @@ pip install ultralytics
 Caffe
 Chainer
 
+それぞれ、メンテナンスが終了しているはずです。
+
 ## deploy先のframe work
 
 deploy 先のframework　は、ボードやアクセラレータを選択した時点で決まるだろう。

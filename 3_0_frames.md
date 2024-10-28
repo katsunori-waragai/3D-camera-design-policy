@@ -101,6 +101,15 @@
 ただ、この分野もiPhoneという組み込みデバイスの中で実現できる時代になっている。
 iPhoneでできるのならば、他の組み込みデバイス（例 Jetson AGX Orin）でも実現できる可能性があるだろう。
 
+- [gaussian splatting](https://github.com/graphdeco-inria/gaussian-splatting)
+- [驚くほどキレイな三次元シーン復元、「3D Gaussian Splatting」を徹底的に解説する](https://qiita.com/scomup/items/d5790da25a846e645de1)
+
+
+動いている対象が入っているときの３D再構築の例
+- [MonST3R: A Simple Approach for Estimating Geometry in the Presence of Motion](https://monst3r-project.github.io/)
+- [pdf](https://arxiv.org/pdf/2410.03825)
+- [github](https://github.com/Junyi42/monst3r)
+
 (6)　ステレオカメラを用いた多視点形状復元
 上記の例では、単一カメラであったものを、ステレオカメラで毎フレーム取得することで、
 単眼カメラの場合よりも少ないフレーム数での３次元形状の復元を目指す。
