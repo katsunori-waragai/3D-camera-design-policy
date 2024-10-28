@@ -27,6 +27,12 @@ Open3Dは、多くの研究プロジェクトで使用されており、クラ�
 
 プロジェクトページから和訳
 
+### 解釈
+- バックエンドが最適化している
+  - グラフィックス
+  - 行列演算
+  なので、自力でOpenGLなどを書く状況ではない。
+
 [Open3D-ML](https://github.com/isl-org/Open3D-ML)
 An extension of Open3D to address 3D Machine Learning tasks
 
