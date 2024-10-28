@@ -14,6 +14,8 @@
 透明な弾性体の変形を表面にあるドッドマーク位置の変位によりとらえて、分布を計測することができる。
 透明な弾性体越しに見える画像を元にした視覚的な判断も可能である。
 
+[視覚に基づく触覚センサとロボットマニピュレーション](https://jp.foundation.canon/eng/common/pdf/aid_awardees/10/12_yamaguchi_cfk10.pdf)
+
 ### 近接覚センサ
 [近接覚センサ](https://www.thinker-robotics.co.jp/product/sensor-tk-01.html)
 近接覚センサーは、赤外線と独自のエッジAIの組み合わせにより、
@@ -23,6 +25,8 @@
 
 
 [触覚・近接覚センサ解説 V3](https://www.docswell.com/s/m_shimojo/Z8RPP5-2022-04-16-134500)
+
+[これからの触覚技術](https://www.docswell.com/s/m_shimojo/53LW1Z-2022-04-16-140746#p1)
 
 ## end-to-endの学習
 最近、大規模言語モデルの進展は、ロボットの動作の分野にも及んできている。
