@@ -84,6 +84,7 @@ https://github.com/katsunori-waragai/libIGEVStereo
 # 目次
 ## 第１章　設計の方針
 [design policy](1_0_design_policy.md)
+[宣言](1_1_manifest.md)
 ## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
 - [camera_selection](2_1_camera_selection)
 - [board_selection](2_2_board_selection.md)
