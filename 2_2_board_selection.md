@@ -17,6 +17,11 @@ raspberry pi 5
 ##### raspberry pi 5+「Raspberry Pi AI Kit」
 [ラズパイ5にAIキットが登場、処理性能は13TOPS](https://monoist.itmedia.co.jp/mn/articles/2406/05/news086.html)
 
+[Raspberry Pi AI HAT+（26TOPS版）](https://www.switch-science.com/products/9999?srsltid=AfmBOopiZbk5tXGoCWj10eUNKbUeegZq9smK_GoK_DjphtTRUAyFLrsJ)
+> Hailo 8 AIアクセラレーターを搭載したRaspberry Pi 5用のHAT+です。Raspberry Pi 5（4 GB / 8 GB）上で優れた推論性能（最大26 TOPS）を発揮させることができます。13 TOPSの廉価版も取り扱いがあります。
+
+
+
 ### Qualcomm
 [Qualcomm Neural Processing SDK for AI](https://www.qualcomm.com/developer/software/neural-processing-sdk-for-ai)
 
@@ -47,6 +52,8 @@ https://github.com/hailo-ai/hailo_model_zoo/blob/master/docs/GETTING_STARTED.rst
 [ﾗｽﾞﾊﾟｲ5・RealSense・Hailo-8でセグメンテーションタスク推論中の消費電力：7.5W
 すごく省電力](https://x.com/Ray255Ar/status/1798686519571669354)
 
+
+Hailo-8 がRaspberry Pi AI HAT　として利用可能になっているので、RaspberryPI 5と組合で利用するのがいいだろう。
 
 ### Coral USB Accelerator
 [Coral USB Accelerator](https://coral.ai/products/accelerator/)
@@ -99,6 +106,14 @@ Movidius Neural Compute Stick (NCS),
   - 「GMSL2-USB3.0 変換キット」などで検索してみてください。
   - USBに変換して接続した場合には、評価目的の一時的なものと思ってください。
   - 本来のGMSL2のネットワーク性能は確保されません。
+- ロボットの分野では、かなりの数のセンサ類・アクチェータ類とのインタフェースが必要になります。
+  - 選択肢１：一つのボードという選択
+    - その場合でも、System on Module (SOM)を使うことになるでしょう。
+  - 選択肢２：高次の判定を行う側のボードとデバイス側（センサ類・アクチェータ類）に近いボードとに分けるという実装
+    - この選択だと、デバイス側（センサ類・アクチェータ類）に近いボードを持つことで、インタフェースが足らなくなることを解消しやすくなります。
+    - センサを置き換えるときの変更がデバイスに近い側だけのボードの改変に留めることができます。
+    - デバイス側（センサ類・アクチェータ類）に近いボードの中で緊急性が高い処理を、短い時間で行うことが可能になります。
+    
 
 ## dataの流れ
 - 複数の台数のカメラを接続する時点で、ボードの選択は重要です。
