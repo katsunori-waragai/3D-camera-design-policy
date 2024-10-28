@@ -83,13 +83,13 @@ https://github.com/katsunori-waragai/libIGEVStereo
 
 # 目次
 ## 第１章　設計の方針
-[design policy](1_0_design_policy)
+[design policy](1_0_design_policy.md)
 ## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
 - [camera_selection](2_1_camera_selection)
 - [board_selection](2_2_board_selection.md)
 - [framework_selection](2_3_framework_selection.md)
 ## 第３章　フレームの扱いと代表的なタスク
-- [frames](3_0_frames)
+- [frames](3_0_frames.md)
 - [frames_depth](3_1_frames_depth.md)
 - [代表的なタスク](3_5_typical_task.md)
 - [ZED SDK (Stereolabs)でのサンプル](3_6_stereolabs_examples.md)
@@ -98,13 +98,13 @@ https://github.com/katsunori-waragai/libIGEVStereo
 ## 第５章　スレッド処理
 [スレッド処理](5_threads.md)
 ## 第６章 ROS2
-- [ROS2](6_0_ros2)
+- [ROS2](6_0_ros2.md)
 - [6_1_coordinates.md](6_1_coordinates.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
-- [usage_proposal](7_1_usage_proposal)
+- [usage_proposal](7_1_usage_proposal.md)
 - [3D計測と画像認識の未来](7_5_future.md)
 ## 第８章　試験的な実装
-- [exprimental](8_0_exprimental)
+- [exprimental](8_0_exprimental.md)
 - 開発 [development](8_1_development.md)
 - Open3D [open3d](8_2_open3d.md)
 - [task design](8_3_task_design.md)
