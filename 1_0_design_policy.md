@@ -12,6 +12,7 @@
 5. 3Dカメラと画像認識・画像を利用する大規模言語モデルとの連携をしやすくすること
   - 3DカメラのSDKの例にある画像認識との連携例を紹介する。
   - 3DカメラのSDKで取得した点群データと、OSSの画像認識（例：物体検出）との組合せ方の例を示すこと
+
 ## サンプル実装
 - ステレオカメラの視差画像の可視化のためのライブラリを提供すること
   - 実装：[disparity-view](https://github.com/katsunori-waragai/disparity-view)
@@ -20,179 +21,37 @@
   - [libIGEVStereo](https://github.com/katsunori-waragai/libIGEVStereo)
   - [libstereosgbm](https://github.com/katsunori-waragai/libstereosgbm)
 
-
-## 参考事例
-scikit-learn
-
-scikit-learnでは、学習アルゴリズムが異なってもfit(), predict()
-という共通の名前をメソッドに使っていることで、
-アルゴリズムを差し替えを簡単にしている。
+## サンプル実装の利用例
 
 ```.py:
-from sklearn import svm
-X = [[0, 0], [1, 1]]
-y = [0, 1]
-clf = svm.SVC()
-clf.fit(X, y)
-clf.predict([[2., 2.]])
+    disparity_calculator = stereosgbm.DisparityCalculator(
+        window_size=window_size, min_disp=min_disp, max_disp=max_disp
+    )
+	disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
-
-RandomForestClassifierの場合
-
+別なステレオ計測での実行例の１部では、次のようになる。
+どちらでも、似たコードになる。
+アルゴリズムの違いによる設定パラメータの違いは、インスタンスを作成する際のパラメータの違いとして吸収される。
 ```.py:
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
-X, y = make_classification(n_samples=1000, n_features=4,
-                           n_informative=2, n_redundant=0,
-                           random_state=0, shuffle=False)
-clf = RandomForestClassifier(max_depth=2, random_state=0)
-clf.fit(X, y)
-clf.predict(X)
+      disparity_calculator = stereoigev.DisparityCalculator(args=args)
+      disparity = disparity_calculator.predict(left.copy(), right.copy())
 ```
 
-どちらの実装の利用においても
-```commandline
-clf.fit(X, y)
-clf.predict(X)
-```
+- どちらの場合も同じライブラリを用いて、
+  - 視差画像の可視化ができる
+  - 点群への変換ができる
+  - 再投影画像を作れる
 
-部分は共通である。
-このため、分類器　Classifierの実装が置換えやすいインタフェースになっている。
+#### 実行結果の例
 
-混同行列(confusion marix)を計算して、どういう誤分類を生じているのかをテーブルにまとめるのは
-共通の方法で対処できる。
+<img src="https://github.com/katsunori-waragai/libstereosgbm/blob/main/test/test-imgs/disparity/disparity_motorcycle.png" width="640">
+<img src="https://github.com/katsunori-waragai/disparity-view/blob/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="640">
 
-[sklearn.metrics.confusion_matrix(y_true, y_pred, *, labels=None, sample_weight=None, normalize=None)]
-(https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix)
-
-```.py:
->>> from sklearn.metrics import confusion_matrix
->>> y_true = [2, 0, 2, 2, 0, 1]
->>> y_pred = [0, 0, 2, 2, 0, 2]
->>> confusion_matrix(y_true, y_pred)
-array([[2, 0, 0],
-       [0, 0, 1],
-       [1, 0, 2]])
-```
-
-このような共通のインタフェース設計が、機械学習のライブラリを利用しやすくした。
-
-共通のインタフェースの利点は、以下のようなコードで、4種類のアルゴリズムに対して、
-fit(), predict()が共通なことが効いている。
-
-```.py:
-# Fit estimators
-ESTIMATORS = {
-    "Extra trees": ExtraTreesRegressor(
-        n_estimators=10, max_features=32, random_state=0
-    ),
-    "K-nn": KNeighborsRegressor(),
-    "Linear regression": LinearRegression(),
-    "Ridge": RidgeCV(),
-}
-
-y_test_predict = dict()
-for name, estimator in ESTIMATORS.items():
-    estimator.fit(X_train, y_train)
-    y_test_predict[name] = estimator.predict(X_test)
-```
-
-[引用元のスクリプト](https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_multioutput_face_completion.html#sphx-glr-auto-examples-miscellaneous-plot-multioutput-face-completion-py)
-
-![](https://scikit-learn.org/stable/_images/sphx_glr_plot_multioutput_face_completion_001.png)
-スクリプトの実行結果
-このデモスクリプトは、顔の上半分を与えたら、顔の下半分を予測させるモデルの学習後の予測の結果だ。
-顔の特徴は、上半分と下半分で無関係なわけがない。顔が丸顔だったら、上半分と下半分で共通だろし、年齢や性別の影響も上半分と下半分で共通に現れると期待される。
-だから、上半分の顔画像を与えたときに、下半分の顔を予想させようという取り組みが可能になる。
-使用した手法によっては、それらしい結果を与えている。
-（生成AIを用いた状況では、これらよりも良い推論を得られるだろう。）
-
-このようにアルゴリズムが異なっても同一のインタフェースを持つことの利点は大きい。
-
-## この宣言がめざすこと
-- タスクへの入出力が同じアルゴリズムであれば、アルゴリズムの種類が変わっても、同一のインタフェース設計でコードを書ける。
-- 例：単一フレームでのステレオ計測のアルゴリズムの実装であれば、利用するアルゴリズムの種類や実装のフレームワークが違っても、 同じインタフェースで利用可能な状況を目指すこと。
-- 依存するCPUボード・アクセラレータが変わっても、有用なアルゴリズムが移植可能な状況を実現しやすくすること。
-  - 3Dカメラを差し替えても、可能な範囲で画像認識・３D計測が同一のインタフェースで組合せ可能にしていくこと
-    - 例：物体検出の結果を３Dカメラからの３Dデータと関連付けるを簡単にしていくこと。
-- 3Dカメラの種類の違いによる比較をしやすくしていくこと
-  - 現状では、それぞれのSDKでの表示ツールでの表示に頼っていることが多い。
-  - そのため、違いが表示ツールによるものなのか、特性の差によるものかがわかりにくい
-  - 共通の表示ツールを使えるようになれば、特性の差を比較しやすくなる。
-- ある3DカメラのSDKのサンプルプログラムが有用でしかもOSSのライセンスであることがある。
-  - そのよいアイディアを、別のカメラでも使いたい。
-- 3D分野の初心者にとってよい初期値を与えること
-  - 3D分野の初心者が利用するだろうステレオ計測の実装はOpenCVのものだろう。
-  - しかし、OpenCVのステレオ計測は、2020年代の今となってはあまりにも古い実装になっている。
-
-#### 3Dカメラと画像認識との統合は、新しい産業の基盤となる
-- 機械学習が、従来はファイルに変換済みのデータに対するもので、身体性をあまり持たないものが中心だった。
-- しかし、大規模言語モデルの成功は、それらをカメラとアーム・ハンドをもつ身体性のある知能に変えつつある。
-- 視覚言語モデルに基づく汎用性が高い学習は、アーム・ハンドと結びついて、新たな時代を切り開こうとしている。
-- 視覚言語モデルの成功は、それが７軸アームとグリッパーの組合せであっても、様々な分野で産業構造を変えると予想されている。
-- その中で、3Dカメラと認識・計測技術が標準化されないものになってしまうと、使い勝手の悪さのために、なかったと同じものになってしまう。
-- 使い勝手を向上させることが、新しい基盤になるうえで必要だ。
-
-##### 今回のAIの進展が期待はずれとなりにくい理由
-- かつて、AIへの期待が広がった時期が会って、期待されるほどには結果を出せずに、AIの冬の時期があった。
-- 今回のすぐに冬の時代をむかえるだろうと思っている人もいるかもしれない。
-- しかし、私は、今回の進展は一時的なブームではなく、継続的な進展になると確認している。
-- 理由：
-  - 部分的に役に立つタスクを様々にこなしていること
-  - 制約の少ない条件でのタスクをこなしていること
-    - 例：対象物を限定しない物体検出
-    - 例：画像と言語の連携が進んでいること
-    - 例：機械学習結果を利用して機械学習を改善するループが回りだしていること
-  - カメラと自律マシンとの間で、外界についての「理解」を可能にしてきていること
-  - 今回のAIの開発では、コミュニティの規模が大きくなっていることによる加速が生じていること
-
-##### 国内の動向への危惧
-- 今回の技術の進展に対する、産業界の対応が乏しいこと
-- 3Dカメラそれ自体、大規模言語モデルの画像認識AIへの影響、３Dとの組合せによる産業への影響
-- 技術の進展をトレースするのさえ追いついていない。
-- 
-
-## 公開されることで開発が加速される。
-#### コミュニティの規模が開発を加速させる。
-- 「こういうのほしいよ」、「実装してみたよ」の発生するイベントの数は、コミュニティの規模Nの2乗に比例する。
-- 「実装してみたよ」、「使ってみたよ」の発生するイベントの数は、コミュニティの規模Nの2乗に比例する。
-- 「製品を販売します」、「購入します」の発生するイベントの数は、コミュニティの規模Nの2乗に比例する。
-こういう状況において、英語圏・中国語圏のコミュニティにくらべ、日本語のコミュニティの規模は小さい。
-それなのに、アイディアや、秘匿するまでもない実装を秘匿することは、圧倒的な遅れを引き起こす。
-コミュニティを作る努力は、論文の調査の協力や、コミュニティのメンバー間の努力によってなされている。
-3Dカメラと画像認識・視覚言語モデルなどのコミュニティが活発になることは次の効果をもたらすと考えている。
-
-#### 僕たちの実現しようとする未来は、自部署だけじゃ作れない
-- 僕たちが山ほど書いてきた実装のほとんどは、その時点では会社の売上に貢献したかもしれない。
-- しかし、それらのコードは、その次の未来を築くことなく、古びて失われていった。
-  - GitHub以前では、コードを確実に次の世代のメンバーに受け渡す方法がなかった。
-  - 担当した人が職場からされば、その存在さえ忘れさられる。
-  - Not Invented Here の価値観は、評価してみるよりも先に、自分で書き出すのをしがちだろう。
-- 僕たちの作ろうとする未来において、３Ｄ計測と画像認識と視覚言語モデルの融合は、どこかの誰かによって支配されることを望まない。
-  - 協力して未来を築かなければ、どこかの誰かに支配されて終わってしまう。
-  - 支配された状況では全ての富は、その技術を支配する人たちに握られてしまう。
-  - 支配された状況では、さらなる改良を推進できない。
-- 自部署だけのノウハウとして秘匿する部分があっていい。
-- それ以外の秘匿する価値のない部分は共有して、APIをそろえていこう。
-- 秘匿するコードもAPI設計を共通にしておけば、商業的にサポートしているアルゴリズムの力を見せつけることが簡単だ。
-- くり返し言う。僕たちの実現しようとする未来は、自部署だけじゃ作れない。
-
-#### 効果
-- 初心者が、その分野の最新の状況に入りやすい。
-- 3Dカメラの選択、ボードの選択、ライブラリの選択などについての情報を得やすい。
-- それぞれの方式が、どういう条件では効果的であり、どういう条件では使い物にならなくなるのかがわかりやすい。
-- SOTAに準じるアルゴリズムを早い段階で利用できる。
-- どういうAPI設計をすれば、ライブラリとして共有しやすいのかがわかる。
-
-
-
-## 私たちにできること
-- 利用している３Dカメラの違いを超えた３Dカメラ利用者のコミュニティの創出
-- ある３Dカメラにある実装を、他の３Dカメラへの移植の可能性の共有
-- 利用するOS、CPUボード、GPU、アクセラレータの違いを超えての情報の共有化
-- 視覚言語モデルなどの進展を取り入れやすくすること
-
+##### 再投影画像の有用性
+- 視差（もしくは深度）をcolormap で表示するだけでは、ステレオ計算の結果の妥当性について目視レベルのチェックをするには不十分過ぎる。
+- 点群に変換したあとに、視点の位置と向きを変えた再投影画像は、目視レベルのチェックを楽にする。
+- また、法線ベクトルの向きに応じた色表示は、表面の状況を理解しやすくするものだ。
 
 # design policy
 1. アルゴリズムを置換え可能にする。
@@ -237,39 +96,6 @@ for name, estimator in ESTIMATORS.items():
 8. それぞれのモジュールがカメラを接続しようとはしないこと
   - 実装例：モジュールじたいの中では,カメラのインスタンスを生成しない。mainの中でカメラのインスタンスを生成する。
   - 理由：１つのカメラに接続できるのは、１つのアプリケーションだけである。
-
-## 実装の利用例
-
-```.py:
-    disparity_calculator = stereosgbm.DisparityCalculator(
-        window_size=window_size, min_disp=min_disp, max_disp=max_disp
-    )
-	disparity = disparity_calculator.predict(left.copy(), right.copy())
-```
-
-別なステレオ計測での実行例の１部では、次のようになる。
-どちらでも、似たコードになる。
-アルゴリズムの違いによる設定パラメータの違いは、インスタンスを作成する際のパラメータの違いとして吸収される。
-```.py:
-      disparity_calculator = stereoigev.DisparityCalculator(args=args)
-      disparity = disparity_calculator.predict(left.copy(), right.copy())
-```
-
-- どちらの場合も同じライブラリを用いて、
-  - 視差画像の可視化ができる
-  - 点群への変換ができる
-  - 再投影画像を作れる
-
-#### 実行結果の例
-
-<img src="https://github.com/katsunori-waragai/libstereosgbm/blob/main/test/test-imgs/disparity/disparity_motorcycle.png" width="640">
-<img src="https://github.com/katsunori-waragai/disparity-view/blob/main/test/test-imgs/disparity-IGEV/left_motorcycle.png" width="640">
-
-##### 再投影画像の有用性
-- 視差（もしくは深度）をcolormap で表示するだけでは、ステレオ計算の結果の妥当性について目視レベルのチェックをするには不十分過ぎる。
-- 点群に変換したあとに、視点の位置と向きを変えた再投影画像は、目視レベルのチェックを楽にする。
-- また、法線ベクトルの向きに応じた色表示は、表面の状況を理解しやすくするものだ。
-- 
 
 ## class ベースの設計
 設計の例

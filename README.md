@@ -84,6 +84,7 @@ https://github.com/katsunori-waragai/libIGEVStereo
 # 目次
 ## 第１章　設計の方針
 [design policy](1_0_design_policy.md)
+[宣言](1_1_manifest.md)
 ## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
 - [camera_selection](2_1_camera_selection)
 - [board_selection](2_2_board_selection.md)
@@ -113,6 +114,10 @@ https://github.com/katsunori-waragai/libIGEVStereo
 - [アルゴリズムの精度](8_6_alogrithm_accuracy.md)
 ## 第９章 対象外のこと
 [out_of_scope](9_out_of_scope.md)
+
+## Appendix
+- [参考事例: scikit-learn](appendix_1.md)
+
 
 ## あなたにできること
 - このプロジェクトのドキュメントを自由に展開してください。
