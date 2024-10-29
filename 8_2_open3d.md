@@ -76,6 +76,24 @@ camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 ### Open3Dの短所
 - Open3Dのデータ型自体では、floatとの直接的な乗算・加算などができないようになっている。
 
+## Open3Dでの留意点
+#### Open3D初学者のとまどい：なぜ２つあるの？
+```commandline
+o3d.t.geometry.PointCloud()
+o3d.geometry.PointCloud()
+```
+
+#### 自分なりの理解
+- CPUとGPUとでデータを行き来させる状況を想定して作り直したのが
+　[Geometry (Tensor)](https://www.open3d.org/html/tutorial/t_geometry/index.html#)　らしい。
+- だから、たいがいの場合には、`o3d.t.` で始まるライブラリを使うのがよさそうだ。
+- 同じことをするスクリプトの例があったら、`o3d.t.` で始まるライブラリをまず試すこと。
+- o3d.t.geometry.PointCloud()の側には、`project_to_rgbd_image()` というメソッドがある。
+- o3d.geometry.PointCloud()の側には、その名前のメソッドがないだけではなく、対応する機能のメソッドを見つけられなかった。
+
+
+Open3D初学者のとまどい：データメンバーが違う。
+
 
 ## OpenGL
 Open3DはOpenGLを内部で利用している。
