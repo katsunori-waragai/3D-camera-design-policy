@@ -61,11 +61,39 @@ camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 
 
 ## OpenCVとOpen3Dとの比較
+### OpenCVの利点
+- np.ndarray型、cv::Mat型のどちらでも直接的な演算を可能にしている。
+### OpenCVの短所
+- OpenCVなど、ほとんどの変数がnp.ndarray型、もしくはcv::Mat型になってしまう。
+- OpenCVでは、ライブラリに多くの機能が不足しているので、視差を深度に換算するのさえ、自作のコードを必要としてしまう。
+- データの所在をGPU,CPUを切り替えて演算する機能がない。
+### Open3Dの利点
+- Open3Dと名乗るだけあって、3Dのデータを扱うためのライブラリが充実している。
 - Open3Dでは、それぞれの変数がそれぞれの型を持っている。そのため、Open3Dを使っている範囲では、不適切な型の変数を引数に与えるとエラーになる。
 - type hintを見た時点で、変数の意味が明確になりやすい。
-  - OpenCVなど、ほとんどの変数がnp.ndarray型、もしくはcv::Mat型になってしまう。
 - Open3Dの関数を用いて実装すると、だれが書いても似たようなコードになりやすい。
-- Open3Dと名乗るだけあって、3Dのデータを扱うためのライブラリが充実している。OpenCVでは、ライブラリに多くの機能が不足しているので、視差を深度に換算するのさえ、自作のコードを必要としてしまう。
+- データの所在をGPU,CPUとを明示的に指定することができる。
+### Open3Dの短所
+- Open3Dのデータ型自体では、floatとの直接的な乗算・加算などができないようになっている。
+
+## Open3Dでの留意点
+#### Open3D初学者のとまどい：なぜ２つあるの？
+```commandline
+o3d.t.geometry.PointCloud()
+o3d.geometry.PointCloud()
+```
+
+#### 自分なりの理解
+- CPUとGPUとでデータを行き来させる状況を想定して作り直したのが
+　[Geometry (Tensor)](https://www.open3d.org/html/tutorial/t_geometry/index.html#)　らしい。
+- だから、たいがいの場合には、`o3d.t.` で始まるライブラリを使うのがよさそうだ。
+- 同じことをするスクリプトの例があったら、`o3d.t.` で始まるライブラリをまず試すこと。
+- o3d.t.geometry.PointCloud()の側には、`project_to_rgbd_image()` というメソッドがある。
+- o3d.geometry.PointCloud()の側には、その名前のメソッドがないだけではなく、対応する機能のメソッドを見つけられなかった。
+
+
+Open3D初学者のとまどい：データメンバーが違う。
+
 
 ## OpenGL
 Open3DはOpenGLを内部で利用している。
