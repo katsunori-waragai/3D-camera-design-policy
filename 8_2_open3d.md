@@ -109,8 +109,17 @@ o3d.geometry.PointCloud()
 - o3d.geometry.PointCloud()の側には、その名前のメソッドがないだけではなく、対応する機能のメソッドを見つけられなかった。
 
 
-Open3D初学者のとまどい：データメンバーが違う。
+#### Open3D初学者のとまどい：データメンバーが違う。
+- o3d.t.geometry.PointCloud()
+- o3d.geometry.PointCloud()
 
+#### Open3D初学者のとまどい
+- データにfloatをかけることも、足すこともできない。
+
+#### Open3Dには含まれていないもの
+3DカメラのSDKになれると、Open3Dには以下のものが含まれていないのが、物足りなくなる。
+- 各データの時刻情報
+- IMUのデータ
 
 ## OpenGL
 Open3DはOpenGLを内部で利用している。

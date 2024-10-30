@@ -22,3 +22,6 @@ Z:カメラから前方へ
 InitParameters.coordinate_system の値を変更することで、
 ６通りの定義を切り替えることができる。
 
+
+[3Dモデリングでハマるカメラ座標系の罠](https://qiita.com/astaka/items/d5048ed943c6a285ae62)
+
