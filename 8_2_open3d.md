@@ -61,6 +61,12 @@ camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 
 
 ## OpenCVとOpen3Dとの比較
+### Open3Dの特徴
+- 2Dのデータ・３Dのデータを扱う上で必要なデータに対するデータ型が用意されている。
+  - そのため、その型にあるメソッドやデータメンバーを調べることで、使い方がわかる。
+- データの視覚化のインタフェースが簡潔化されている。
+  - そのため、OpenGLによる描画の部分はバックエンドとして隠れている。
+
 ### OpenCVの利点
 - np.ndarray型、cv::Mat型のどちらでも直接的な演算を可能にしている。
 ### OpenCVの短所
@@ -75,6 +81,17 @@ camera_matrix = np.array([[fx, 0, cx], [0, fy, cy], [0, 0, 1]])
 - データの所在をGPU,CPUとを明示的に指定することができる。
 ### Open3Dの短所
 - Open3Dのデータ型自体では、floatとの直接的な乗算・加算などができないようになっている。
+
+## OpenGL とOpen3Dとの比較
+- OpenGL:
+  - グラフィックスのためのライブラリ
+  - マルチプラットフォーム対応
+- Open3D:
+  - ２Dデータ・３次元データを扱うためのライブラリ
+  - バックエンドとしてOpenGLを利用している。
+### OpenGLのコードの例
+- [3d and Bird View visualization](https://community.stereolabs.com/t/3d-and-bird-view-visualization/3928)
+- [github view.py](https://github.com/stereolabs/zed-sdk/blob/master/object%20detection/birds%20eye%20viewer/python/ogl_viewer/viewer.py)
 
 ## Open3Dでの留意点
 #### Open3D初学者のとまどい：なぜ２つあるの？
@@ -92,8 +109,17 @@ o3d.geometry.PointCloud()
 - o3d.geometry.PointCloud()の側には、その名前のメソッドがないだけではなく、対応する機能のメソッドを見つけられなかった。
 
 
-Open3D初学者のとまどい：データメンバーが違う。
+#### Open3D初学者のとまどい：データメンバーが違う。
+- o3d.t.geometry.PointCloud()
+- o3d.geometry.PointCloud()
 
+#### Open3D初学者のとまどい
+- データにfloatをかけることも、足すこともできない。
+
+#### Open3Dには含まれていないもの
+3DカメラのSDKになれると、Open3Dには以下のものが含まれていないのが、物足りなくなる。
+- 各データの時刻情報
+- IMUのデータ
 
 ## OpenGL
 Open3DはOpenGLを内部で利用している。
