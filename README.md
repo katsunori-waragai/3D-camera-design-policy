@@ -99,16 +99,16 @@ https://github.com/katsunori-waragai/libIGEVStereo
 [reducing latency and camera pose](4_reducing_latency.md)
 ## 第５章　スレッド処理
 [スレッド処理](5_threads.md)
-## 第６章 ROS2
+## 第６章 Open3D and ROS2
 - [ROS2](6_0_ros2.md)
 - [6_1_coordinates.md](6_1_coordinates.md)
+- [Open3D](6_2_open3d.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
 - [usage_proposal](7_1_usage_proposal.md)
 - [3D計測と画像認識の未来](7_5_future.md)
 ## 第８章　試験的な実装
 - [exprimental](8_0_exprimental.md)
 - 開発 [development](8_1_development.md)
-- Open3D [open3d](8_2_open3d.md)
 - [task design](8_3_task_design.md)
 - [移植](8_4_porting.md)
 - [ドキュメント](8_5_module_doc.md)
