@@ -88,9 +88,9 @@ https://github.com/katsunori-waragai/libIGEVStereo
 - [宣言](1_1_manifest.md)
 - [開発済みのコンポーネントを使おう](1_2_use_developed.md)
 ## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
-- [camera_selection](2_1_camera_selection)
-- [board_selection](2_2_board_selection.md)
-- [framework_selection](2_3_framework_selection.md)
+- [3Dカメラの選択](2_1_camera_selection.md)
+- [CPUボードの選択](2_2_board_selection.md)
+- [推論のframework の選択](2_3_framework_selection.md)
 ## 第３章　フレームの扱いと代表的なタスク
 - [frames](3_0_frames.md)
 - [frames_depth](3_1_frames_depth.md)
@@ -105,7 +105,7 @@ https://github.com/katsunori-waragai/libIGEVStereo
 - [6_1_coordinates.md](6_1_coordinates.md)
 - [Open3D](6_2_open3d.md)
 ## 第７章 3Dカメラでの計測と物体検出についての提案の私見
-- [usage_proposal](7_1_usage_proposal.md)
+- [3Dカメラでの計測と画像認識についての提案の私見](7_1_usage_proposal.md)
 - [3D計測と画像認識の未来](7_5_future.md)
 ## 第８章　試験的な実装
 - [exprimental](8_0_exprimental.md)
