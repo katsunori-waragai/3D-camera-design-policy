@@ -87,6 +87,7 @@ https://github.com/katsunori-waragai/libIGEVStereo
 - [design policy](1_0_design_policy.md)
 - [宣言](1_1_manifest.md)
 - [開発済みのコンポーネントを使おう](1_2_use_developed.md)
+- [必要な実装](1_3_required.md)
 ## 第２章　３Dカメラの選択・ボードの選択・フレームワークの選択
 - [3Dカメラの選択](2_1_camera_selection.md)
 - [CPUボードの選択](2_2_board_selection.md)
