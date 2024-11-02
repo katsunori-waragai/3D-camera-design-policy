@@ -108,14 +108,14 @@ https://github.com/katsunori-waragai/libIGEVStereo
 - [3Dカメラでの計測と画像認識についての提案の私見](7_1_usage_proposal.md)
 - [3D計測と画像認識の未来](7_5_future.md)
 ## 第８章　試験的な実装
-- [exprimental](8_0_exprimental.md)
+- [試験的な実装](8_0_exprimental.md)
 - 開発 [development](8_1_development.md)
-- [task design](8_3_task_design.md)
+- [タスクの再設計](8_3_task_design.md)
 - [移植](8_4_porting.md)
 - [ドキュメント](8_5_module_doc.md)
 - [アルゴリズムの精度](8_6_alogrithm_accuracy.md)
 ## 第９章 対象外のこと
-[out_of_scope](9_out_of_scope.md)
+[対象外のこと](9_out_of_scope.md)
 
 ## Appendix
 - [参考事例: scikit-learn](appendix_1.md)
