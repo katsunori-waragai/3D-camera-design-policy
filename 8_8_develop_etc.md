@@ -25,3 +25,21 @@
 
 ## ユニコード文字列を画像に書き加えるには
 - PIL.Image (pillow)を使おう。
+- PIL.Image はImageIOを使うと既にインストールされている。
+- ImageIOはScikit-image を使うと既にインストールされている。
+
+## Calltree で判明したこと
+scikit-image はimage-io に依存
+image-ioはPillow に依存。
+
+エラーログの一部
+```commandline
+/usr/local/lib/python3.8/dist-packages/skimage/io/_io.py:143: in imsave
+    return call_plugin('imsave', fname, arr, plugin=plugin, **plugin_args)
+/usr/local/lib/python3.8/dist-packages/skimage/io/manage_plugins.py:205: in call_plugin
+    return func(*args, **kwargs)
+/usr/local/lib/python3.8/dist-packages/imageio/v3.py:147: in imwrite
+    encoded = img_file.write(image, **kwargs)
+/usr/local/lib/python3.8/dist-packages/imageio/plugins/pillow.py:444: in write
+    pil_frame = Image.fromarray(frame, mode=mode)
+```
