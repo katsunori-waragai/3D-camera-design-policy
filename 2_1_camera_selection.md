@@ -4,8 +4,8 @@
 
 ## カメラの種類
 - Stereo Camera
+- active stereo Camera
 - ToF Camera
-- Structured light Camera
 - monocular camera　(exceptional)
 
 ## camera hardware requirement
@@ -233,15 +233,15 @@ https://www.stereolabs.com/en-jp/store/products/zed-2i
   - そのような悪条件にならない制御された環境では、ステレオカメラで十分なタスクが多い。
   - 偏光フィルタ付きでかつSDKが充実しているステレオカメラを選択するのがよい。
 
-#### Structured lightのステレオカメラは、特性が安定する。
+#### Active stereo camera は、特性が安定する。
 - ３つの方式の中では、一番破綻しにくいロジックになっている。
 - そのことが、充実したSDKのあるカメラでの利用が多い理由だとおもう。
 - ステレオカメラと違って、点群の算出部分に工夫の余地がないので、3Dカメラ以外の本業に集中できるというメリットもある。
 （ああ、これはToFも同じか。）
-- 注意点：Structured　LightのステレオカメラとRGBカメラの視点の位置が違うということ
+- 注意点：Active stereo cameraとRGBカメラの視点の位置が違うということ
 近距離のデータを扱う場合には点群を平行移動して解釈させるということ。
-- 対策案：Structured　Lightの点群データを、RGBカメラの位置に再投影してRGB画像への対応するdepthを算出できるのではないかと期待する。
-その際に、Structured　Lightでの計測に用いているカメラパラメータと、RGBカメラのパラメータが違いことに対する扱いを適切にすること。
+- 対策案：Active stereo cameraの点群データを、RGBカメラの位置に再投影してRGB画像への対応するdepthを算出できるのではないかと期待する。
+その際に、Active stereo cameraでの計測に用いているカメラパラメータと、RGBカメラのパラメータが違いことに対する扱いを適切にすること。
 Open3Dのようなライブラリで、そのような操作ができると思う。
 
 ###### 弱点

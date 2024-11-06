@@ -28,7 +28,7 @@
 - カメラの種類
   - Stereo Camera
   - ToF Camera
-  - Structured light Camera
+  - Active stereo camera
   - monocular camera　(exceptional)
 - 機能
   - 画像取得
