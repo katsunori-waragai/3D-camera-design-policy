@@ -11,6 +11,10 @@
 　顔照合ライブラリを呼び出す。
 参考事例：https://github.com/PINTO0309/PINTO_model_zoo
 
+google colabotory でのノートブック
+https://colab.research.google.com/drive/1Klphx3MKgOcz2CGmVOz09gYiUL76IXZM?usp=share_link
+
+
 ###### 場合３：頭部検出もできる人物検出器で、頭部の向きも推定できる場合でかつ、頭部の追跡ができている場合
 　追跡に成功している顔を、顔照合する頻度を減らすことができます。
 　3Dカメラによって対応付けられている人物検出は、３Ｄ空間の座標として追跡をしているので、追跡の間違いが発生しにくくなっています。
