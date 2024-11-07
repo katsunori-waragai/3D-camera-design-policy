@@ -19,6 +19,16 @@
 それぞれが別のプロセスであるので、マルチコアの性能を引き出しやすい。
 #### Gstreamer
 - [GStreamerとは](https://www.argocorp.com/UVC_camera/GStreamer.html)
+- [gstreamer備忘録](https://qiita.com/maueki/items/b54cbe5207bb16869756)
+`$ gst-launch-1.0 videotestsrc ! autovideosink`
+のような使い方をする。
+- [RustでGStreamer Pluginを書く](https://qiita.com/uzuna/items/6c183253736e26598c45)
+
+"tcambin ! videoconvert ! ximagesink"
+このように "!" でパイプとして、それぞれのエレメントをつないで処理をおこなうことができる。
 
 #### NVidia DeepStream
 - [DeepStream SDKとは？](https://www.macnica.co.jp/business/semiconductor/articles/nvidia/134117/)
+- [NVIDIA DeepStream SDK for Rust](https://github.com/aosoft/nvidia-deepstream-rs)
+- 
+
