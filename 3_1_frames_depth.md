@@ -79,6 +79,9 @@ BlendedMVS-stereo: CC BY-NC 3.0 DEED (Non-commercial use)
 [Neural Fields for Structured Lighting](https://openaccess.thecvf.com/content/ICCV2023/papers/Shandilya_Neural_Fields_for_Structured_Lighting_ICCV_2023_paper.pdf)
 
 
+[stereo_slam](https://github.com/srv/stereo_slam)
+
+
 (6)
 - [Generalizable Novel-View Synthesis using a Stereo Camera](https://jinwonjoon.github.io/stereonerf/)
 

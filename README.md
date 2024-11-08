@@ -100,7 +100,8 @@ https://github.com/katsunori-waragai/libIGEVStereo
 ## 第４章　遅延時間とカメラ姿勢の問題
 [reducing latency and camera pose](4_reducing_latency.md)
 ## 第５章　スレッド処理
-[スレッド処理](5_threads.md)
+[スレッド処理](5_0_threads.md)
+[GStreamer もしくはNVIDIA DeepStream](5_1_gstreamer.md)
 ## 第６章 Open3D and ROS2
 - [ROS2](6_0_ros2.md)
 - [6_1_coordinates.md](6_1_coordinates.md)
