@@ -6,6 +6,7 @@
 - Stereo Camera
 - active stereo Camera
 - ToF Camera
+- LiDAR ＆ camera
 - monocular camera　(exceptional)
 
 ## camera hardware requirement
@@ -259,6 +260,20 @@ ToFカメラは、圧倒的に弱点が多い。そこで、ToFカメラと別�
 
 ## jsonファイルでのカメラ情報
 [stereo_camera.json](stereo_camera.json)
+
+
+## LiDARについて
+製品例
+https://www.xgrids.com/lixell2pro
+
+LiDARは十年前よりも格段に値段が低下している。
+予算がゆるせば、検討する候補に入れていいだろう。
+
+LiDARの圧倒的な強みは、遠方への距離の正確さだろう。
+[LiDAR（ライダー）とは？これだけは知っておきたい３つのこと](https://jp.mathworks.com/discovery/lidar.html)
+この記事に中で、代表的なLiDARのメーカーのリストがある。
+
+大きな部屋の端から端までの距離を正確に求める必要があるときには、ステレオ計測やSLAMなどの手法は期待できない。誤差が累積するからだ。
 
 
 ## SDKがしょぼくてもなんとかするという猛者の場合
