@@ -51,6 +51,13 @@ PapersWithCode [3D Reconstruction](https://paperswithcode.com/task/3d-reconstruc
 ##### Visual Question Answering (VQA)
 - PapersWithCode [Visual Question Answering (VQA)](https://paperswithcode.com/task/visual-question-answering)
 
+#### VLA(vision language action)
+視覚と言語の入力があって、動作を生成するタスクとして定義される。
+例：視覚を含む各種センサデータ、運転についての指示がある状況で、自律運転車の動作を生成するタスク
+このなかでは、人検出などの物体検出・周辺環境のセグメンテーションもVLAのend-to-end の中に隠れたタスクとなる。
+
+
+
 ## 大規模言語モデルは、避けて通れない
 #### PC・クラウドサービスでの推論
 主に国内の動向から
