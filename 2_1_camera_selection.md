@@ -6,6 +6,7 @@
 - Stereo Camera
 - active stereo Camera
 - ToF Camera
+- LiDAR ＆ camera
 - monocular camera　(exceptional)
 
 ## camera hardware requirement
@@ -147,7 +148,7 @@ Tier IV C1 Camera
   - 汎用のロボットを目指す場合、しずくがとんだくらいで、壊れてほしくない。
   - IP66　の防塵防水機能があるものを選ぶと良い。
 
-利用するアプリケーション側が明確に決まっている場合
+#### 利用するアプリケーション側が明確に決まっている場合
 - 例： Unityで使うことが決まっている。
 - その場合には、Unityに対応している3Dカメラを使うのが一番。
 - 未対応の3Dカメラを使えるように対応付けるのは、簡単ではない。
@@ -155,10 +156,11 @@ Tier IV C1 Camera
 - これも、NVIDIAのサイトなどを確認して対応済みの3Dカメラを使うのがよい。
 
 
-## structured light
+## active stereo and structured light
 [Structured-light-stereo](https://github.com/feiran-l/Structured-light-stereo)
 stereocamera が特徴をつかみにくい領域で、視差の計算をすると、結果が不安定になってしまう。
 プロジェクタと組み合わせることで、structured light　を実現できる。
+active stereo カメラは、パターンを投影して、それをステレオ計測するのを近赤外光で実行しているものです。
 
 ## カメラキャリブレーションについての記事
 https://kushalvyas.github.io/calib.html
@@ -259,6 +261,36 @@ ToFカメラは、圧倒的に弱点が多い。そこで、ToFカメラと別�
 
 ## jsonファイルでのカメラ情報
 [stereo_camera.json](stereo_camera.json)
+
+
+## LiDARについて
+製品例
+https://www.xgrids.com/lixell2pro
+
+LiDARは十年前よりも格段に値段が低下している。
+予算がゆるせば、検討する候補に入れていいだろう。
+
+LiDARの圧倒的な強みは、遠方への距離の正確さだろう。
+[LiDAR（ライダー）とは？これだけは知っておきたい３つのこと](https://jp.mathworks.com/discovery/lidar.html)
+この記事に中で、代表的なLiDARのメーカーのリストがある。
+
+- Velodyne Lidar
+- SICK
+- 北陽電機
+- Ouster
+- Ibeo Automotive Systems 
+- Livox
+
+大きな部屋の端から端までの距離を正確に求める必要があるときには、ステレオ計測やSLAMなどの手法は期待できない。誤差が累積するからだ。
+
+LiDARについて調べるには、自動運転関連の書籍・記事をあたるといいだろう。
+例
+- [自動運転のためのセンサシステム入門　車載カメラとＬｉＤＡＲによるセンサフュージョン](https://pub.nikkan.co.jp/book/b10021618.html)
+- [自動運転技術入門　AI×ロボティクスによる自動車の進化](https://www.ohmsha.co.jp/book/9784274227011/)
+
+## 対象物の速度が重要な場合
+- Doppler効果でその瞬間の速度（相対速度）が求まるのはミリ波レーダーです。
+- ステレオ計測では遠方の距離の精度がでないため、速度を算出するには適しません。
 
 
 ## SDKがしょぼくてもなんとかするという猛者の場合

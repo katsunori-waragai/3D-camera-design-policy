@@ -25,6 +25,12 @@ raspberry pi 5
 ### Qualcomm
 [Qualcomm Neural Processing SDK for AI](https://www.qualcomm.com/developer/software/neural-processing-sdk-for-ai)
 
+
+### D-Robotics
+[D-Robotics RDK X3](https://www.switch-science.com/products/9836)
+5 TOPS（Tera Operations per Second）の推論演算能力を備えた開発ボードです。多様なセンサや、その他の拡張ハードウェア、接続方法に対応しています。
+
+
 ### SONY SPRESENSE
 [SPRESENSE](https://www.sony-semicon.com/ja/products/spresense/index.html)
 [Neural Network Console](https://dl.sony.com/ja/)
