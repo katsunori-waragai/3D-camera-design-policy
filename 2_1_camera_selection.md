@@ -321,3 +321,9 @@ LiDARについて調べるには、自動運転関連の書籍・記事をあた
 - [ステレオカメラ業界を追放されし者のカメラレビュー（Femto Bolt ）](https://qiita.com/Takumi3Dcamera/items/45feb1f2ee1ddeb22991)
 - [A Quick Comparison of the Orbbec and RealSense 3D Cameras](https://opencv.org/blog/a-quick-comparison-of-the-orbbec-and-realsense-3d-cameras/)
 
+
+## 特殊なカメラ
+- [イベントカメラの話](https://qiita.com/kminoda/items/6d71029f6c860da60740)
+- [イベントベースビジョンセンサー（EVS）技術](https://www.sony-semicon.com/ja/technology/industry/evs.html)
+- [イベントカメラ DAVIS346／DVXplorer Micro](https://nanoxeed.co.jp/product/eventcamera/)
+- [イベントカメラの出力をもとに少ない計算量で高速に動きを認識 [CVPR2023]](https://www.d-itlab.co.jp/blog/2024/04/05/CVPR2023.html)
