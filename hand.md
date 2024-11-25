@@ -20,3 +20,5 @@ https://www.nbk1560.com/resources/handling_technology/article/gripper/?SelectedL
 http://www.nihonbinary.co.jp/Products/Robot/shadow_dextrous.html
 ４本指の場合でも2.4kg と重量がある。
 
+ダブル技研　ハンド
+https://j-d.co.jp/dhand-3finger.html

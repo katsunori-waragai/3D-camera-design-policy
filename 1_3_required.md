@@ -2,18 +2,51 @@
 - 2Dの物体検出をOpen3Dベースの深度情報と関連付けられること
 - 2Dのインスタンスセグメンテーションの結果をOpen3Dベースの深度情報と関連付けられること
   - インスタンスセグメンテーションで絞り込まれた領域から、深度分布のパーセンタイル値が算出できること
+  - 例：３Dカメラとセグメンテーション
+  - https://github.com/bowu1004/instance_segmentation_RealSense
+  - https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/custom%20detector/python/pytorch_yolov8_seg
 - 物体検出の結果に対する追跡
   - ３Dとしての物体検出では、対象物の空間的位置が重なることが生じにくい。
   - 3Dでの物体の追跡は、2Dの場合よりも安定になりやすい。
+  - 例：検出結果にtracking_IDがついています。
+  - https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/birds%20eye%20viewer/python
+  - object detection/birds eye viewer/python$ python3 object_detection_birds_view.py
 - 人検出・人のポーズ推定に関わるライブラリが3Dカメラと連携がとれること
+  - UnityやUnrealEngine などの3Dゲームエンジンと連動できること。
+  - これらのゲームエンジンに対して人物の３Dとしてのポーズを取得して連携できること。
+  - 例：
+  - https://github.com/stereolabs/zed-sdk/tree/master/body%20tracking
 - 顔検出だけでなく、顔照合を3Dカメラで連携がとれること。
   - 3Dでの追跡ができることを利用して、顔照合の頻度は減らせること。
   - 顔照合は、利用可能なライブラリの情報を含める（商用ライブラリも含める）。
+  - 動画生成の技術の進展のため、2Dでのカメラを用いた顔照合は、偽装の危機にさらされています。
+  - ３Dカメラを用いた顔照合技術は、当面は偽装不可能な照合技術になるでしょう。
+  - 例：[Intel RealSense ID for Facial Authentication 　Securely Unlock your World](https://www.intelrealsense.com/facial-authentication/)
 - IMUを使って、世界座標系に対する点群の位置を算出できること
+
 - 過去フレームのデータも使って、環境の点群・着目している対象物の点群を生成できること
+  - 階段を昇る際に、常に足元を見続けるかどうか
+  - 過去のフレームのデータを元に点群を生成して、その結果を保持していれば、足元の情報を元に、足の動かす量を算出できます。
+  - 実装例：
+  - [MonST3R: A Simple Approach for Estimating
+Geometry in the Presence of Motion](https://monst3r-project.github.io/)
+  - 移動しているカメラでみた動画から、環境の点群を生成できるだけではなく、他に移動している対象の動きも抽出している。それらが３Dとして解釈されているので、別の視点から動画を生成できている。
+  - ロボットに組み込むためには、オーバースペックであるだろう。これよりも簡潔で計算量やメモリ消費量の少ない実装が求められるだろう。
 ## 生成系AIの進展を反映させたい実装
 - 見えていない側の領域を補完する点群（あるいはメッシュ）の生成
-- 
+- 人の動作：
+  - 対象物の見えていない側の形状を暗黙に想定して動作を生成してる。
+  - 缶コーヒーの裏側の奥行きを暗黙に仮定して動作を生成している。
+  - 3D計測をステレオカメラで点群にしただけでは、ロボットの動作として足りない。
+  - 仮説の生成・検証が動作のループの中にほしい。
+
+## オーバーヘッドの少ない実装
+- 複数の画像認識機能が必要になるとき、多数のライブラリを同時に起動することは減らしたい。
+- なるべくなら、１つの実装で、従来の複数の実装を置換えたい。
+- 複数のネットワーク構造で、推論を複数実行するよりは、単一のネットワークでの推論の方がいい。
+- 例：
+[DINO-X: A Unified Vision Model for Open-World Object Detection and Understanding](https://arxiv.org/abs/2411.14347)
+- https://github.com/IDEA-Research/DINO-X-API
 
 ## 定型的な処理としてあってほしいもの
 - 物体の大きさの計測
