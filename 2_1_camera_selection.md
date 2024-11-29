@@ -162,6 +162,11 @@ stereocamera が特徴をつかみにくい領域で、視差の計算をする�
 プロジェクタと組み合わせることで、structured light　を実現できる。
 active stereo カメラは、パターンを投影して、それをステレオ計測するのを近赤外光で実行しているものです。
 
+#### Structured light
+- https://qiita.com/nonbiri15/private/f88312b2a2f25dd85d68
+- https://kushalvyas.github.io/sl_3d.html
+- [OpenCVのstructured-lightを流用して3Dスキャン](https://qiita.com/nn_tok/items/b2233a5632ec9fcaf714)
+
 ## カメラキャリブレーションについての記事
 https://kushalvyas.github.io/calib.html
 
@@ -305,6 +310,14 @@ LiDARについて調べるには、自動運転関連の書籍・記事をあた
 - どういう条件で精度が劣化しやすいか考え、ハードウェアの対策をとってくれ。
 - 独自のSDKを作って拡張する場合には、よく使われている3Dカメラの機能を参考にAPIを設計するといいだろう。
 - 
+
+## 単眼カメラ
+ハイダイナミックレンジの単眼カメラ
+- [Tier IV　C1 カメラ](https://edge.auto/automotive-camera)
+- [StereoLabs ZED X One カメラ](https://www.stereolabs.com/en-jp/products/zed-x-one)
+- Spresense カメラ
+- [SPRESENSE HDRカメラボード[CXD5602PWBCAM2W]](https://www.switch-science.com/products/8080)
+- [SPRESENSEカメラボード [CXD5602PWBCAM1]](https://www.switch-science.com/products/4119)
 
 ## 参考情報
 - [市販ＴoＦカメラについて調査中(2023年版）](https://qiita.com/nonbiri15/items/5fdb9962bbdc76274d90)
