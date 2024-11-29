@@ -28,6 +28,22 @@
 ### https://github.com/katsunori-waragai/yolox-zed-sdk
 YOLOX とZED　SDKとの組合せた実装例
 
+### https://github.com/katsunori-waragai/zed-gsam
+grounded-segment-anything with ZED SDK
+
+![](https://github.com/katsunori-waragai/zed-gsam/raw/main/figures/depth_and_gsam.png)
+
+Open Vocaburary でのセグメンテーションとZED SDKでの連動の実装例
+
+- 深度情報とセグメンテーションとを画素単位で対応付けすることができる。
+- ZED SDK の算出する世界座標系と、Open Vocaburary でのセグメンテーションとを対応付けることができる。
+- できないこと：
+  - text_prompt　で指定されていない物体へのセグメンテーション。
+  - 物体の見えてない範囲についての仮説の生成
+  - 次の行動を引き起こすための、把持位置についての仮説の生成
+  - 周辺環境を考慮して、ぶつからないためのアームとハンドの行動計画の生成
+  - これらの課題については、それぞれに適した実装を探すこと。
+
 
 -----------------------------------------------
 
