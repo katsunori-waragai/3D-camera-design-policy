@@ -25,8 +25,49 @@
  それをJetson AGX orin に移植してある実装を、モジュールとしてインストール可能なように改変したもの。
 　それを利用したサンプルとして、ZED　SDKでの深度にスケーリングを合わせ込んだ単眼深度画像（正確には単眼での視差相当画像）を作成するスクリプトを含む。
 
+![](https://github.com/katsunori-waragai/depth-anything-zed/raw/main/figures/neural_plus_near.png)
+
+#### 開発理由
+大半の3Dカメラには、近距離側の計測限界がある。そのためカメラに写っている至近距離の物体が、欠損値になってしまう。
+このことを回避するには、
+作業距離を近距離側の計測限界より遠くなるようにする、
+超音波センサでの物体検出をする、
+のような対策が必要になる。
+
+Depth-Anything を使えば、至近距離での物体があることに気づける。（距離の精度は不十分かもしれないが）
+欠損値として無視してしまうのを避けるための実装である。
+
+
 ### https://github.com/katsunori-waragai/yolox-zed-sdk
 YOLOX とZED　SDKとの組合せた実装例
+
+https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/custom%20detector/python/pytorch_yolov8
+の実装をヒントに、yolov8の代わりにyoloxを用いたもの。
+
+![](https://github.com/katsunori-waragai/yolox-zed-sdk/raw/main/pytorch_yolox/figures/webcam_zed.png)
+実施例
+
+- このコードは、pytorch_yolov8　に似せて書いた。
+- StereoLabs にこのコードを寄付した。
+- StereoLabsで動作検証されて、標準の配布物になればうれしいと思っている。
+- YOLOX と同じMIT ライセンスを選択した。
+
+
+### https://github.com/katsunori-waragai/zed-gsam
+grounded-segment-anything with ZED SDK
+
+![](https://github.com/katsunori-waragai/zed-gsam/raw/main/figures/depth_and_gsam.png)
+
+Open Vocaburary でのセグメンテーションとZED SDKでの連動の実装例
+
+- 深度情報とセグメンテーションとを画素単位で対応付けすることができる。
+- ZED SDK の算出する世界座標系と、Open Vocaburary でのセグメンテーションとを対応付けることができる。
+- できないこと：
+  - text_prompt　で指定されていない物体へのセグメンテーション。
+  - 物体の見えてない範囲についての仮説の生成
+  - 次の行動を引き起こすための、把持位置についての仮説の生成
+  - 周辺環境を考慮して、ぶつからないためのアームとハンドの行動計画の生成
+  - これらの課題については、それぞれに適した実装を探すこと。
 
 
 -----------------------------------------------
