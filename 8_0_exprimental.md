@@ -41,6 +41,18 @@ Depth-Anything を使えば、至近距離での物体があることに気づ�
 ### https://github.com/katsunori-waragai/yolox-zed-sdk
 YOLOX とZED　SDKとの組合せた実装例
 
+https://github.com/stereolabs/zed-sdk/tree/master/object%20detection/custom%20detector/python/pytorch_yolov8
+の実装をヒントに、yolov8の代わりにyoloxを用いたもの。
+
+![](https://github.com/katsunori-waragai/yolox-zed-sdk/raw/main/pytorch_yolox/figures/webcam_zed.png)
+実施例
+
+- このコードは、pytorch_yolov8　に似せて書いた。
+- StereoLabs にこのコードを寄付した。
+- StereoLabsで動作検証されて、標準の配布物になればうれしいと思っている。
+- YOLOX と同じMIT ライセンスを選択した。
+
+
 ### https://github.com/katsunori-waragai/zed-gsam
 grounded-segment-anything with ZED SDK
 
