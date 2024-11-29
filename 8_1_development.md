@@ -44,6 +44,17 @@ Nvidia JetsonやRaspberry Pi　などのようにクラウドサービスでは�
 
 ## TensorRTモデルへの変換
 pytorchのモデルはTensorRTへのモデルに変換することで、NVIDIA　GPUでの動作速度を改善することができます。
+#### torch2trt
+https://github.com/NVIDIA-AI-IOT/torch2trt
+NVIDIAがpytorchモデルをTensorRTのモデルに変換するツールを提供しています。
+そのインストールと利用は、簡単です。
+以下の自作プロジェクトの中でも、使ってみました。
+https://github.com/katsunori-waragai/yolox-zed-sdk/tree/main/pytorch_yolox
+
+#### ultralyticsの場合
+最新のYOLO シリーズ(ultralytics)では、それぞれのプラットフォームへの変換について対応をしており、
+その推論時間なども、記載しています。
+https://docs.ultralytics.com/ja/guides/nvidia-jetson/#__tabbed_4_1
 
 ## onnx　モデルへの変換
 tensorflowやpytorchのモデルをonnx にモデルを変換することができます。
