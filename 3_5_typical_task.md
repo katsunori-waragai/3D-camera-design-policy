@@ -93,3 +93,8 @@ github [Swan A Lightweight Language Model Execution Environment Using FPGA](http
 [言語モデルを高位合成でFPGAに実装してみた](https://zenn.dev/turing_motors/articles/82505880d27d65)
 
 ## それはほんとうにVisionのタスクなのか
+- 例：ばら積みのボルト・ナットをロボットのハンドでつかませて、持ち直して、取り付ける。
+- このうち、バラ積みのボルトがあるのを見つけるまではビジョンだと思う。
+- しかし、そこから一つをつかみだし、持ち直すのは、圧倒的にタッチとタッチに基づく行動計画だと思う。
+- 参照例：　https://www.thinker-robotics.co.jp/product/robot-hand-f.html
+
