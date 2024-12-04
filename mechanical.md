@@ -35,6 +35,10 @@
 ## アームの駆動範囲は自由空間であるという前提
 - [機能安全](https://ja.wikipedia.org/wiki/%E6%A9%9F%E8%83%BD%E5%AE%89%E5%85%A8)と[本質安全](https://jp.misumi-ec.com/tech-info/categories/machine_design/md01/c1524.html)
 - 協働ロボットに移行する時点で捨て去らなくちゃならない。
+- 本質安全
+  - [ロボット介護機器のための本質安全設計支援 本質安全設計支援ツールの開発](https://robotcare.jp/data/etc/2N2-06_honma_presentation.pdf)
+  - [接触吸収型接触検知外挿カバー](https://www.meti.go.jp/press/2022/03/20230320003/20230320003-2.pdf)
+- 機能安全
 - ぶつかなないように行動を計画すること。
 - 仮にぶつかりそうになっても、被害を軽減できること。
 - ぶつかっても、人に怪我をさせない範囲の使い方をすること。
@@ -52,8 +56,6 @@
 [「従来の協働ロボットは接触すると停止する機能が付いているが、新開発の「MZS05」では接触前に停止する機能を付与し、安全性をさらに高めた。」](https://www.robot-digest.com/contents/?id=1730343279-930012)
 
 
-[ロボット介護機器のための本質安全設計支援 本質安全設計支援ツールの開発](https://robotcare.jp/data/etc/2N2-06_honma_presentation.pdf)
-[接触吸収型接触検知外挿カバー](https://www.meti.go.jp/press/2022/03/20230320003/20230320003-2.pdf)
 
 
 
