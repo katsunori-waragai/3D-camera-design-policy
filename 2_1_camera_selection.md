@@ -335,8 +335,15 @@ LiDARについて調べるには、自動運転関連の書籍・記事をあた
 - [A Quick Comparison of the Orbbec and RealSense 3D Cameras](https://opencv.org/blog/a-quick-comparison-of-the-orbbec-and-realsense-3d-cameras/)
 
 
+https://x.com/PINTO03091/status/1651561968174772224
+https://x.com/PINTO03091/status/1651609834402484224
+https://x.com/chakioxsmillin/status/1594785435414585344
+
+
 ## 特殊なカメラ
 - [イベントカメラの話](https://qiita.com/kminoda/items/6d71029f6c860da60740)
 - [イベントベースビジョンセンサー（EVS）技術](https://www.sony-semicon.com/ja/technology/industry/evs.html)
 - [イベントカメラ DAVIS346／DVXplorer Micro](https://nanoxeed.co.jp/product/eventcamera/)
 - [イベントカメラの出力をもとに少ない計算量で高速に動きを認識 [CVPR2023]](https://www.d-itlab.co.jp/blog/2024/04/05/CVPR2023.html)
+- [世界初※1、極小物体※2の距離計測を可能とする 京セラの「AI測距カメラ」の開発について](https://www.kyocera.co.jp/newsroom/news/2024/002590.html)
+- 
