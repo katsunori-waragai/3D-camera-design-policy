@@ -22,3 +22,8 @@ http://www.nihonbinary.co.jp/Products/Robot/shadow_dextrous.html
 
 ダブル技研　ハンド
 https://j-d.co.jp/dhand-3finger.html
+
+
+[PAXINI Multi-Tactile Dexterous Hand](https://www.paxini.com/dex)
+[#PaXini ITPU 3 million industrial-grade durability tests.](https://www.youtube.com/watch?v=93SCqySd2k0&rco=1)
+
