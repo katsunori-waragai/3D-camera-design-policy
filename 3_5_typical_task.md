@@ -110,3 +110,46 @@ github [Swan A Lightweight Language Model Execution Environment Using FPGA](http
 - しかし、そこから一つをつかみだし、持ち直すのは、圧倒的にタッチとタッチに基づく行動計画だと思う。
 - 参照例：　https://www.thinker-robotics.co.jp/product/robot-hand-f.html
 
+## 物体としての2次元画像の理解
+- CNNに代表される物体検出のロジックでは、2次元画像としての理解のままとどまり、その背後にある空間の認識がない。
+- 例：YOLOの物体検出
+- https://pjreddie.com/darknet/yolo/horses.png
+- boundingbox は画像上の位置に過ぎない。
+- 含んでいないもの：
+- 奥行き情報、物体の前後関係
+- 物体までの距離、地面・床面での接地位置
+- 物体の大きさ
+- 物体表面の向きに関する情報
+
+これらの情報が欠落している。
+
+ロボットが認識して行動をおこすには、空間情報としての理解が必要になる。
+
+フォトメトリックステレオ法
+https://seeds.nii.ac.jp/researcher-files/ikehata
+https://openaccess.thecvf.com/content_ECCV_2018/papers/Ikehata_CNN-PS_CNN-based_Photometric_ECCV_2018_paper.pdf
+
+
+フォトメトリックステレオ法による外観検査の撮像事例
+https://www.ccs-inc.co.jp/solution/case/ap_photometric_stereo.html
+![](figure/photometric_stereo.png)
+
+照度差ステレオの原理と実際
+https://annex.jsap.or.jp/photonics/kogaku/public/41-05-kaisetsu4.pdf
+
+
+https://github.com/visiont3lab/photometric_stereo
+
+
+https://github.com/tomykaira/photometric-stereo
+
+単眼ステレオの実装は、フォトメトリックステレオという言葉を使わない表現で実装が進んでいる。
+
+DepthAnything の実装がその一つである。
+それらの実装からでも、法線ベクトルの向きなどの情報を取得することができる。
+
+法線ベクトルのデータを含めて、RGBデータと一緒に推論を行うのはどうだろう。
+物体形状についての理解が支援された状況での推論となる
+その分、目的の精度は達せしやすくなるだろう。
+
+アクティブサンプリングするスコア領域の範囲を未検出率１０％に相当する領域に集中させたらどうなるだろう。
